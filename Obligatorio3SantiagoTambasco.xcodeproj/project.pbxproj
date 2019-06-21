@@ -7,21 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4840090AEE0741D2997C70EC /* Pods_Obligatorio3SantiagoTambasco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1180A49E8193243518B5B9 /* Pods_Obligatorio3SantiagoTambasco.framework */; };
+		B400CE4022B318B000AC788C /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B400CE3F22B318B000AC788C /* MovieCollectionViewCell.swift */; };
+		B400CE4222B318C400AC788C /* CinemaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B400CE4122B318C400AC788C /* CinemaCollectionViewCell.swift */; };
+		B40444B222BAC166005064C0 /* FunctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40444B122BAC166005064C0 /* FunctionCollectionViewCell.swift */; };
+		B40FA71A22B85C3F00606010 /* BillBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FA71922B85C3F00606010 /* BillBoardViewController.swift */; };
+		B40FFAF322B0AF420063C802 /* Promotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FFAF222B0AF420063C802 /* Promotions.swift */; };
+		B40FFAF622B0B09F0063C802 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FFAF522B0B09F0063C802 /* PromotionsViewController.swift */; };
+		B413EC6C22B1D64A00A24B81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B413EC6B22B1D64A00A24B81 /* GoogleService-Info.plist */; };
+		B41D870122BC96DF002A6F9F /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D870022BC96DF002A6F9F /* SessionManager.swift */; };
 		B47B87C022AB14170094526D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B87BF22AB14170094526D /* AppDelegate.swift */; };
-		B47B87C222AB14170094526D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B87C122AB14170094526D /* ViewController.swift */; };
 		B47B87C522AB14170094526D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47B87C322AB14170094526D /* Main.storyboard */; };
 		B47B87C722AB14170094526D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B47B87C622AB14170094526D /* Assets.xcassets */; };
 		B47B87CA22AB14170094526D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47B87C822AB14170094526D /* LaunchScreen.storyboard */; };
+		B47B87D322AB14710094526D /* Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B87D222AB14710094526D /* Cinema.swift */; };
+		B47B87D522AB14AF0094526D /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B87D422AB14AF0094526D /* Function.swift */; };
+		B47B87D722AB14BF0094526D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B87D622AB14BF0094526D /* Movie.swift */; };
+		B47B87D922AB14DA0094526D /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B87D822AB14DA0094526D /* Room.swift */; };
+		B4EAF60C22B8851B0036EAF0 /* FunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAF60B22B8851B0036EAF0 /* FunctionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F771662E840FB5B373E8F2E /* Pods-Obligatorio3SantiagoTambasco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Obligatorio3SantiagoTambasco.release.xcconfig"; path = "Target Support Files/Pods-Obligatorio3SantiagoTambasco/Pods-Obligatorio3SantiagoTambasco.release.xcconfig"; sourceTree = "<group>"; };
+		6A818DC75C460CD8E2AC2523 /* Pods-Obligatorio3SantiagoTambasco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Obligatorio3SantiagoTambasco.debug.xcconfig"; path = "Target Support Files/Pods-Obligatorio3SantiagoTambasco/Pods-Obligatorio3SantiagoTambasco.debug.xcconfig"; sourceTree = "<group>"; };
+		B400CE3F22B318B000AC788C /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		B400CE4122B318C400AC788C /* CinemaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaCollectionViewCell.swift; sourceTree = "<group>"; };
+		B40444B122BAC166005064C0 /* FunctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionCollectionViewCell.swift; sourceTree = "<group>"; };
+		B40FA71922B85C3F00606010 /* BillBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillBoardViewController.swift; sourceTree = "<group>"; };
+		B40FFAF222B0AF420063C802 /* Promotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotions.swift; sourceTree = "<group>"; };
+		B40FFAF522B0B09F0063C802 /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
+		B413EC6B22B1D64A00A24B81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B41D870022BC96DF002A6F9F /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		B47B87BC22AB14170094526D /* Obligatorio3SantiagoTambasco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Obligatorio3SantiagoTambasco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47B87BF22AB14170094526D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B47B87C122AB14170094526D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B47B87C422AB14170094526D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B47B87C622AB14170094526D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B47B87C922AB14170094526D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B47B87CB22AB14170094526D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B47B87D222AB14710094526D /* Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinema.swift; sourceTree = "<group>"; };
+		B47B87D422AB14AF0094526D /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		B47B87D622AB14BF0094526D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		B47B87D822AB14DA0094526D /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		B4EAF60B22B8851B0036EAF0 /* FunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViewController.swift; sourceTree = "<group>"; };
+		DE1180A49E8193243518B5B9 /* Pods_Obligatorio3SantiagoTambasco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Obligatorio3SantiagoTambasco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +57,65 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4840090AEE0741D2997C70EC /* Pods_Obligatorio3SantiagoTambasco.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94C210BA09428666307D4550 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE1180A49E8193243518B5B9 /* Pods_Obligatorio3SantiagoTambasco.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A28E2A15F4853353FA30BDAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A818DC75C460CD8E2AC2523 /* Pods-Obligatorio3SantiagoTambasco.debug.xcconfig */,
+				0F771662E840FB5B373E8F2E /* Pods-Obligatorio3SantiagoTambasco.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B40FFAF422B0B0700063C802 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B40FFAF522B0B09F0063C802 /* PromotionsViewController.swift */,
+				B40FA71922B85C3F00606010 /* BillBoardViewController.swift */,
+				B4EAF60B22B8851B0036EAF0 /* FunctionViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B40FFAF722B0B30E0063C802 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B400CE3F22B318B000AC788C /* MovieCollectionViewCell.swift */,
+				B400CE4122B318C400AC788C /* CinemaCollectionViewCell.swift */,
+				B40444B122BAC166005064C0 /* FunctionCollectionViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		B41D86FF22BC96D0002A6F9F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B41D870022BC96DF002A6F9F /* SessionManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		B47B87B322AB14170094526D = {
 			isa = PBXGroup;
 			children = (
 				B47B87BE22AB14170094526D /* Obligatorio3SantiagoTambasco */,
 				B47B87BD22AB14170094526D /* Products */,
+				A28E2A15F4853353FA30BDAA /* Pods */,
+				94C210BA09428666307D4550 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +130,30 @@
 		B47B87BE22AB14170094526D /* Obligatorio3SantiagoTambasco */ = {
 			isa = PBXGroup;
 			children = (
+				B41D86FF22BC96D0002A6F9F /* Managers */,
+				B40FFAF722B0B30E0063C802 /* Cells */,
+				B40FFAF422B0B0700063C802 /* Controllers */,
+				B47B87D122AB14210094526D /* Models */,
 				B47B87BF22AB14170094526D /* AppDelegate.swift */,
-				B47B87C122AB14170094526D /* ViewController.swift */,
 				B47B87C322AB14170094526D /* Main.storyboard */,
 				B47B87C622AB14170094526D /* Assets.xcassets */,
 				B47B87C822AB14170094526D /* LaunchScreen.storyboard */,
+				B413EC6B22B1D64A00A24B81 /* GoogleService-Info.plist */,
 				B47B87CB22AB14170094526D /* Info.plist */,
 			);
 			path = Obligatorio3SantiagoTambasco;
+			sourceTree = "<group>";
+		};
+		B47B87D122AB14210094526D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B47B87D222AB14710094526D /* Cinema.swift */,
+				B47B87D422AB14AF0094526D /* Function.swift */,
+				B47B87D622AB14BF0094526D /* Movie.swift */,
+				B47B87D822AB14DA0094526D /* Room.swift */,
+				B40FFAF222B0AF420063C802 /* Promotions.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B47B87CE22AB14170094526D /* Build configuration list for PBXNativeTarget "Obligatorio3SantiagoTambasco" */;
 			buildPhases = (
+				B04873917C7702C03E4587FB /* [CP] Check Pods Manifest.lock */,
 				B47B87B822AB14170094526D /* Sources */,
 				B47B87B922AB14170094526D /* Frameworks */,
 				B47B87BA22AB14170094526D /* Resources */,
+				06E55FC13B8E62E1CCCAFB24 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,18 +220,89 @@
 				B47B87CA22AB14170094526D /* LaunchScreen.storyboard in Resources */,
 				B47B87C722AB14170094526D /* Assets.xcassets in Resources */,
 				B47B87C522AB14170094526D /* Main.storyboard in Resources */,
+				B413EC6C22B1D64A00A24B81 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06E55FC13B8E62E1CCCAFB24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Obligatorio3SantiagoTambasco/Pods-Obligatorio3SantiagoTambasco-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Obligatorio3SantiagoTambasco/Pods-Obligatorio3SantiagoTambasco-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B04873917C7702C03E4587FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Obligatorio3SantiagoTambasco-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B47B87B822AB14170094526D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B47B87C222AB14170094526D /* ViewController.swift in Sources */,
+				B40444B222BAC166005064C0 /* FunctionCollectionViewCell.swift in Sources */,
+				B40FA71A22B85C3F00606010 /* BillBoardViewController.swift in Sources */,
+				B47B87D322AB14710094526D /* Cinema.swift in Sources */,
+				B40FFAF622B0B09F0063C802 /* PromotionsViewController.swift in Sources */,
+				B47B87D922AB14DA0094526D /* Room.swift in Sources */,
+				B40FFAF322B0AF420063C802 /* Promotions.swift in Sources */,
 				B47B87C022AB14170094526D /* AppDelegate.swift in Sources */,
+				B400CE4022B318B000AC788C /* MovieCollectionViewCell.swift in Sources */,
+				B400CE4222B318C400AC788C /* CinemaCollectionViewCell.swift in Sources */,
+				B4EAF60C22B8851B0036EAF0 /* FunctionViewController.swift in Sources */,
+				B41D870122BC96DF002A6F9F /* SessionManager.swift in Sources */,
+				B47B87D522AB14AF0094526D /* Function.swift in Sources */,
+				B47B87D722AB14BF0094526D /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +437,7 @@
 		};
 		B47B87CF22AB14170094526D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A818DC75C460CD8E2AC2523 /* Pods-Obligatorio3SantiagoTambasco.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +452,7 @@
 		};
 		B47B87D022AB14170094526D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F771662E840FB5B373E8F2E /* Pods-Obligatorio3SantiagoTambasco.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
