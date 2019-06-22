@@ -19,7 +19,7 @@ class FunctionViewController: UIViewController {
     var cinemas = [Cinema]()
     var movie = Movie()
     var function = Function()
-    var functions = [Function]()
+    var functions = SessionManager.functions
     var functionMovie = [Function]()
     var sections:[String] = []
     var cell = [[Function]]()
@@ -28,6 +28,7 @@ class FunctionViewController: UIViewController {
     var tresCruces = [Function]()
     var nuevoCentro = [Function]()
     var other = [Function]()
+    var functionsForSegue = Function()
     
     func setImage(){
         if let photoUrl = movie.photoUrl {
@@ -93,6 +94,15 @@ class FunctionViewController: UIViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RoomViewSegue" {
+            if let destinationVC = segue.destination as? RoomViewController {
+                destinationVC.function = functionsForSegue
+            }
+        }
+    }
+    
+    
     //Agrego una lista de listas que sea [[cine:funcitons],[cine:functions]]
 
     
@@ -108,7 +118,7 @@ class FunctionViewController: UIViewController {
 
 }
 
-extension FunctionViewController: UITableViewDataSource, UITableViewDelegate{
+extension FunctionViewController: UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout{
     
     //Sections
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -122,6 +132,11 @@ extension FunctionViewController: UITableViewDataSource, UITableViewDelegate{
     
     
     //Row
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        functionsForSegue = functions[indexPath.row]
+        self.performSegue(withIdentifier: "RoomViewSegue", sender: self)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if cell.count==0{
             return 0

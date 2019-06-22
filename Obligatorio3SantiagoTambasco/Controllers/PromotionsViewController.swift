@@ -11,6 +11,7 @@ import Firebase
 
 class PromotionsViewController: UIViewController {
     
+    @IBOutlet weak var promotionCollectionView: UICollectionView!
     var db: Firestore!
     var promotions = [Promotions]()
     let promotion = Promotions()
@@ -36,6 +37,7 @@ class PromotionsViewController: UIViewController {
     var price : Double?
     var quantity : Int?
     var photoUrl : String?
+    var subtotal : Float?
     
     func getPromotions(){
         self.db.collection("promotions").getDocuments { (snapshot, err) in

@@ -11,9 +11,12 @@
 		B400CE4022B318B000AC788C /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B400CE3F22B318B000AC788C /* MovieCollectionViewCell.swift */; };
 		B400CE4222B318C400AC788C /* CinemaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B400CE4122B318C400AC788C /* CinemaCollectionViewCell.swift */; };
 		B40444B222BAC166005064C0 /* FunctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40444B122BAC166005064C0 /* FunctionCollectionViewCell.swift */; };
+		B407398B22BE9493001F0956 /* PromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B407398A22BE9493001F0956 /* PromotionCollectionViewCell.swift */; };
 		B40FA71A22B85C3F00606010 /* BillBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FA71922B85C3F00606010 /* BillBoardViewController.swift */; };
 		B40FFAF322B0AF420063C802 /* Promotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FFAF222B0AF420063C802 /* Promotions.swift */; };
 		B40FFAF622B0B09F0063C802 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FFAF522B0B09F0063C802 /* PromotionsViewController.swift */; };
+		B410E1CD22BD986D0085DC33 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B410E1CC22BD986D0085DC33 /* RoomViewController.swift */; };
+		B410E1CF22BD98EF0085DC33 /* ZSeatSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B410E1CE22BD98EF0085DC33 /* ZSeatSelector.swift */; };
 		B413EC6C22B1D64A00A24B81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B413EC6B22B1D64A00A24B81 /* GoogleService-Info.plist */; };
 		B41D870122BC96DF002A6F9F /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D870022BC96DF002A6F9F /* SessionManager.swift */; };
 		B47B87C022AB14170094526D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B87BF22AB14170094526D /* AppDelegate.swift */; };
@@ -33,9 +36,12 @@
 		B400CE3F22B318B000AC788C /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		B400CE4122B318C400AC788C /* CinemaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaCollectionViewCell.swift; sourceTree = "<group>"; };
 		B40444B122BAC166005064C0 /* FunctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionCollectionViewCell.swift; sourceTree = "<group>"; };
+		B407398A22BE9493001F0956 /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		B40FA71922B85C3F00606010 /* BillBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillBoardViewController.swift; sourceTree = "<group>"; };
 		B40FFAF222B0AF420063C802 /* Promotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotions.swift; sourceTree = "<group>"; };
 		B40FFAF522B0B09F0063C802 /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
+		B410E1CC22BD986D0085DC33 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		B410E1CE22BD98EF0085DC33 /* ZSeatSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSeatSelector.swift; sourceTree = "<group>"; };
 		B413EC6B22B1D64A00A24B81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B41D870022BC96DF002A6F9F /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		B47B87BC22AB14170094526D /* Obligatorio3SantiagoTambasco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Obligatorio3SantiagoTambasco.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +93,7 @@
 				B40FFAF522B0B09F0063C802 /* PromotionsViewController.swift */,
 				B40FA71922B85C3F00606010 /* BillBoardViewController.swift */,
 				B4EAF60B22B8851B0036EAF0 /* FunctionViewController.swift */,
+				B410E1CC22BD986D0085DC33 /* RoomViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -94,9 +101,11 @@
 		B40FFAF722B0B30E0063C802 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B410E1CE22BD98EF0085DC33 /* ZSeatSelector.swift */,
 				B400CE3F22B318B000AC788C /* MovieCollectionViewCell.swift */,
 				B400CE4122B318C400AC788C /* CinemaCollectionViewCell.swift */,
 				B40444B122BAC166005064C0 /* FunctionCollectionViewCell.swift */,
+				B407398A22BE9493001F0956 /* PromotionCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -291,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B40444B222BAC166005064C0 /* FunctionCollectionViewCell.swift in Sources */,
+				B410E1CF22BD98EF0085DC33 /* ZSeatSelector.swift in Sources */,
 				B40FA71A22B85C3F00606010 /* BillBoardViewController.swift in Sources */,
 				B47B87D322AB14710094526D /* Cinema.swift in Sources */,
 				B40FFAF622B0B09F0063C802 /* PromotionsViewController.swift in Sources */,
@@ -299,9 +309,11 @@
 				B47B87C022AB14170094526D /* AppDelegate.swift in Sources */,
 				B400CE4022B318B000AC788C /* MovieCollectionViewCell.swift in Sources */,
 				B400CE4222B318C400AC788C /* CinemaCollectionViewCell.swift in Sources */,
+				B410E1CD22BD986D0085DC33 /* RoomViewController.swift in Sources */,
 				B4EAF60C22B8851B0036EAF0 /* FunctionViewController.swift in Sources */,
 				B41D870122BC96DF002A6F9F /* SessionManager.swift in Sources */,
 				B47B87D522AB14AF0094526D /* Function.swift in Sources */,
+				B407398B22BE9493001F0956 /* PromotionCollectionViewCell.swift in Sources */,
 				B47B87D722AB14BF0094526D /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
