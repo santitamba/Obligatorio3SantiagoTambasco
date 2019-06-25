@@ -1,44 +1,35 @@
 //
-//  FunctionViewController.swift
+//  CinemaFunctionViewController.swift
 //  Obligatorio3SantiagoTambasco
 //
-//  Created by Adrian Perez Garrone on 17/6/19.
+//  Created by Adrian Perez Garrone on 25/6/19.
 //  Copyright © 2019 Adrian Perez Garrone. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class FunctionViewController: UIViewController {
+class CinemaFunctionViewController: UIViewController {
 
-    @IBOutlet weak var functionsTableView: UITableView!
-    @IBOutlet weak var imageMovie: UIImageView!
-   
+    @IBOutlet weak var cinemaImage: UIImageView!
+    @IBOutlet weak var CinemaFuncTableView: UITableView!
+    
     var db: Firestore!
     var cinema = Cinema()
     var cinemas = [Cinema]()
     var movie = Movie()
+    var movies = SessionManager.movies
     var function = Function()
     var functions = SessionManager.functions
     var functionMovie = [Function]()
+    var functionCinema = [Function]()
     var sections:[String] = []
     var cell = [[Function]]()
-    var portones = [Function]()
-    var montevideo = [Function]()
-    var tresCruces = [Function]()
-    var nuevoCentro = [Function]()
+    var avengers = [Function]()
+    var spiderman = [Function]()
+    var aladin = [Function]()
     var other = [Function]()
     var functionsForSegue = Function()
-    
-    func setImage(){
-        if let photoUrl = movie.photoUrl {
-            let url = URL(string: photoUrl)
-            imageMovie.kf.setImage(with: url)
-        }
-    }    
-    
-    override func viewWillAppear(_ animated: Bool) {
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +40,8 @@ class FunctionViewController: UIViewController {
         db = Firestore.firestore()
         addItemToSection()
         setImage()
-        //getFunctions()
         setFunctions()
+
         // Do any additional setup after loading the view.
     }
 
@@ -59,38 +50,66 @@ class FunctionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func addItemToSection(){
-        for cine in cinemas{
-            //Unrawapeo por que si no hay cine no tiene sentido comprar entradas, siempre hay cines
-            sections.append(cine.name!)
+    func setImage(){
+        if let photoUrl = cinema.photoUrl {
+            let url = URL(string: photoUrl)
+            cinemaImage.kf.setImage(with: url)
         }
     }
     
-    //Agrego las funciones de la pelicula que pasa la pantalla anterior
-    func setFunctions(){
-        functionMovie = functions.filter({$0.movieId == movie.id})
-        for f in functionMovie{
+    func addItemToSection(){
+        for movie in movies{
+            //Unrawapeo por que si no hay cine no tiene sentido comprar entradas, siempre hay cines
+            sections.append(movie.title!)
+        }
+    }
+    
+    //Agrego las funciones del cine que pasa la pantalla anterior
+    /*func setFunctions(){
+        functionCinema = functions.filter({$0.cineId == cinema.id})
+        for f in functionCinema{
             print (f.id)
             switch f.cineId!{
             case 1:
-                self.portones.append(f)
+                self.aladin.append(f)
             case 2:
-                self.tresCruces.append(f)
-            case 4:
-                self.nuevoCentro.append(f)
+                self.avengers.append(f)
             case 3:
-                self.montevideo.append(f)
+                self.spiderman.append(f)
             default:
                 self.other.append(f)
             }
-            }
-        self.cell.append(self.tresCruces)
-        self.cell.append(self.nuevoCentro)
-        self.cell.append(self.montevideo)
-        self.cell.append(self.portones)
+        }
+        self.cell.append(self.aladin)
+        self.cell.append(self.avengers)
+        self.cell.append(self.spiderman)
         self.cell.append(self.other)
         
-        self.functionsTableView.reloadData()
+        self.CinemaFuncTableView.reloadData()
+    }*/
+    func setFunctions(){
+        //functionMovie = functions.filter({$0.movieId == movie.id})
+        //for f in functionMovie{
+        functionCinema = functions.filter({$0.cineId == cinema.id})
+        for f in functionCinema{
+            print (f.id)
+            switch f.movieId!{
+            case 1:
+                self.spiderman.append(f)
+            case 2:
+                self.avengers.append(f)
+            case 3:
+                 self.aladin.append(f)
+            default:
+                self.other.append(f)
+            }
+        }
+        self.cell.append(self.aladin)
+        self.cell.append(self.spiderman)
+        self.cell.append(self.avengers)
+        self.cell.append(self.other)
+        
+        self.CinemaFuncTableView.reloadData()
     }
     
     
@@ -102,10 +121,7 @@ class FunctionViewController: UIViewController {
         }
     }
     
-    
-    //Agrego una lista de listas que sea [[cine:funcitons],[cine:functions]]
 
-    
     /*
     // MARK: - Navigation
 
@@ -118,7 +134,7 @@ class FunctionViewController: UIViewController {
 
 }
 
-extension FunctionViewController: UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout{
+extension CinemaFunctionViewController: UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout{
     
     //Sections
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -151,21 +167,15 @@ extension FunctionViewController: UITableViewDataSource, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellFunction = tableView.dequeueReusableCell(withIdentifier: "cellFunction", for: indexPath) as! FunctionCollectionViewCell
+        let cellCinFunction = tableView.dequeueReusableCell(withIdentifier: "cellCinFunction", for: indexPath) as! CinemaFuncitonTableViewCell
         
-        cellFunction.functions=functions
+        cellCinFunction.functions=functions
         let fun = cell[indexPath.section][indexPath.row]
-        cellFunction.fun = fun
-        cellFunction.configureCell()
-        //cellFunction.delegate = self
-        //cellFunction.indexPath = indexPath
-        //cellFunction.purchase = purchases[indexPath.row]
-        //cellFunction.configureCell()
+        cellCinFunction.fun = fun
+        cellCinFunction.configureCell()
+
         
-        return cellFunction
+        return cellCinFunction
     }
-    
-    
-    
     
 }

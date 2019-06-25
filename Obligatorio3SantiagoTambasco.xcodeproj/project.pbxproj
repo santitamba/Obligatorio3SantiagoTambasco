@@ -28,6 +28,8 @@
 		B47B87D722AB14BF0094526D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B87D622AB14BF0094526D /* Movie.swift */; };
 		B47B87D922AB14DA0094526D /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B87D822AB14DA0094526D /* Room.swift */; };
 		B4EAF60C22B8851B0036EAF0 /* FunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAF60B22B8851B0036EAF0 /* FunctionViewController.swift */; };
+		B4F2B93422C1DBD500309116 /* CinemaFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B93322C1DBD500309116 /* CinemaFunctionViewController.swift */; };
+		B4F2B93822C1DC2400309116 /* CinemaFuncitonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B93722C1DC2400309116 /* CinemaFuncitonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		B47B87D622AB14BF0094526D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		B47B87D822AB14DA0094526D /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		B4EAF60B22B8851B0036EAF0 /* FunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViewController.swift; sourceTree = "<group>"; };
+		B4F2B93322C1DBD500309116 /* CinemaFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaFunctionViewController.swift; sourceTree = "<group>"; };
+		B4F2B93722C1DC2400309116 /* CinemaFuncitonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaFuncitonTableViewCell.swift; sourceTree = "<group>"; };
 		DE1180A49E8193243518B5B9 /* Pods_Obligatorio3SantiagoTambasco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Obligatorio3SantiagoTambasco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +98,7 @@
 				B40FA71922B85C3F00606010 /* BillBoardViewController.swift */,
 				B4EAF60B22B8851B0036EAF0 /* FunctionViewController.swift */,
 				B410E1CC22BD986D0085DC33 /* RoomViewController.swift */,
+				B4F2B93322C1DBD500309116 /* CinemaFunctionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 				B400CE4122B318C400AC788C /* CinemaCollectionViewCell.swift */,
 				B40444B122BAC166005064C0 /* FunctionCollectionViewCell.swift */,
 				B407398A22BE9493001F0956 /* PromotionCollectionViewCell.swift */,
+				B4F2B93722C1DC2400309116 /* CinemaFuncitonTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				B40FA71A22B85C3F00606010 /* BillBoardViewController.swift in Sources */,
 				B47B87D322AB14710094526D /* Cinema.swift in Sources */,
 				B40FFAF622B0B09F0063C802 /* PromotionsViewController.swift in Sources */,
+				B4F2B93422C1DBD500309116 /* CinemaFunctionViewController.swift in Sources */,
 				B47B87D922AB14DA0094526D /* Room.swift in Sources */,
 				B40FFAF322B0AF420063C802 /* Promotions.swift in Sources */,
 				B47B87C022AB14170094526D /* AppDelegate.swift in Sources */,
@@ -312,6 +319,7 @@
 				B410E1CD22BD986D0085DC33 /* RoomViewController.swift in Sources */,
 				B4EAF60C22B8851B0036EAF0 /* FunctionViewController.swift in Sources */,
 				B41D870122BC96DF002A6F9F /* SessionManager.swift in Sources */,
+				B4F2B93822C1DC2400309116 /* CinemaFuncitonTableViewCell.swift in Sources */,
 				B47B87D522AB14AF0094526D /* Function.swift in Sources */,
 				B407398B22BE9493001F0956 /* PromotionCollectionViewCell.swift in Sources */,
 				B47B87D722AB14BF0094526D /* Movie.swift in Sources */,

@@ -21,6 +21,7 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view, typically from a nib.
+     
         
         let map:String =    "AAAAA_DAAAA/" +
             "UAAAA_DAAAA/" +
