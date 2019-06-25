@@ -14,7 +14,7 @@ class PromotionsViewController: UIViewController {
     @IBOutlet weak var promotionCollectionView: UICollectionView!
     var db: Firestore!
     var promotions = [Promotions]()
-    let promotion = Promotions()
+    var promotion = Promotions()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,4 +76,33 @@ class PromotionsViewController: UIViewController {
     }
     */
 
+}
+
+extension PromotionsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            //print(movies.count)
+            return promotions.count
+
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            //movieForSegue = movies[indexPath.row]
+            //self.performSegue(withIdentifier: "FunctionViewSegue", sender: self)
+
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+            guard let cellPromotion=collectionView.dequeueReusableCell(withReuseIdentifier: "cellPromotion", for: indexPath) as? PromotionCollectionViewCell else { return UICollectionViewCell()}
+            cellPromotion.promotion = promotions[indexPath.row]
+            cellPromotion.promotions = promotions
+            cellPromotion.configure()
+            
+            return cellPromotion
+        
+    }
+    
 }

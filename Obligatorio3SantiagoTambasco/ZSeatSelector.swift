@@ -14,7 +14,7 @@ protocol ZSeatSelectorDelegate {
 }
 
 class ZSeatSelector: UIScrollView, UIScrollViewDelegate {
-    
+
     var seatSelectorDelegate: ZSeatSelectorDelegate?
     var seat_width:     CGFloat = 20.0
     var seat_height:    CGFloat = 20.0

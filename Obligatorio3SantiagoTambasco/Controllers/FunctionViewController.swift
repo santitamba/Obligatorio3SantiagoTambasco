@@ -29,6 +29,8 @@ class FunctionViewController: UIViewController {
     var nuevoCentro = [Function]()
     var other = [Function]()
     var functionsForSegue = Function()
+    var isMovie = false
+    var isCinema = false
     
     func setImage(){
         if let photoUrl = movie.photoUrl {
@@ -38,6 +40,8 @@ class FunctionViewController: UIViewController {
     }    
     
     override func viewWillAppear(_ animated: Bool) {
+        var isMovie = false
+        var isCinema = false
     }
     
     override func viewDidLoad() {

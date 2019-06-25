@@ -18,4 +18,19 @@ class PromotionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    
+    var promotions = [Promotions]()
+    var promotion = Promotions()
+    
+    func configure() {
+        //CinemaLabel.text = cinema.name
+        titleLabel.text = promotion.name
+        priceLabel.text = "$ " + String(describing: round(100*promotion.price!)/100)
+        if let photoUrl = promotion.photoUrl {
+            let url = URL(string: photoUrl)
+            promotionImage.kf.setImage(with: url)
+        }
+        
+    }
+    
 }

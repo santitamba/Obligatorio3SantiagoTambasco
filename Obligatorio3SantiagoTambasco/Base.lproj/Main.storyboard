@@ -155,7 +155,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Siguiente"/>
                                 <connections>
-                                    <action selector="clickNextButton:" destination="Fzy-LC-VtC" eventType="touchUpInside" id="cvr-1c-Pax"/>
+                                    <action selector="clickNextButton:" destination="Fzy-LC-VtC" eventType="touchUpInside" id="jlD-vs-8wi"/>
                                     <segue destination="Wyn-l2-NmV" kind="show" identifier="PromotionViewSegue" id="TIw-6C-xkq"/>
                                 </connections>
                             </button>

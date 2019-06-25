@@ -24,6 +24,7 @@ class BillBoardViewController: UIViewController {
     var function = Function()
     var TIndex = 0
     var movieForSegue = Movie()
+    var cinemaForSegue= Cinema()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -146,6 +147,7 @@ class BillBoardViewController: UIViewController {
         if segue.identifier == "FunctionViewSegue" {
             if let destinationVC = segue.destination as? FunctionViewController {
                 destinationVC.movie = movieForSegue
+                destinationVC.cinema = cinemaForSegue
                 destinationVC.cinemas = cinemas
                 destinationVC.functions = functions
             }
@@ -174,7 +176,8 @@ extension BillBoardViewController: UICollectionViewDataSource, UICollectionViewD
             self.performSegue(withIdentifier: "FunctionViewSegue", sender: self)
         }
         else{
-            return
+            cinemaForSegue = cinemas[indexPath.row]
+            self.performSegue(withIdentifier: "FunctionViewSegue", sender: self)
         }
     }
     

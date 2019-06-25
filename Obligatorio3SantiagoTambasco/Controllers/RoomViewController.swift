@@ -12,12 +12,14 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
 
     @IBOutlet weak var nextButton: UIButton!
 
+
     
     var function = Function()
     var subtotal : Float?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
         
         let map:String =    "AAAAA_DAAAA/" +
@@ -92,6 +94,8 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
     @IBAction func clickNextButton(_ sender: Any) {
         self.performSegue(withIdentifier: "PromotionViewSegue", sender: self)
     }
+    
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier=="PromotionViewSegue"{
