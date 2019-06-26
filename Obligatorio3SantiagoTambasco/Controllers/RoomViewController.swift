@@ -6,20 +6,48 @@
 //  Copyright © 2019 Adrian Perez Garrone. All rights reserved.
 //
 
+
 import UIKit
+import Firebase
 
 class RoomViewController: UIViewController,ZSeatSelectorDelegate {
 
     @IBOutlet weak var nextButton: UIButton!
 
 
-    
+    var db: Firestore!
     var function = Function()
     var subtotal : Float?
+    var room = Room()
+    var rooms = SessionManager.rooms
+    let seats2 = ZSeatSelector()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        db.collection("room").document("lpG3bNi5rykf78U0E27Q")
+            .addSnapshotListener { documentSnapshot, error in
+                guard let document = documentSnapshot else {
+                    print("Error fetching document: \(error!)")
+                    return
+                }
+                print("Current data: \(document.data())")
+                
+                let id = document.get("id") as! Int
+                let map = document.get("map") as! String
+                self.room.map=map
+                self.room.id=id
+                let map2=self.room.map
+                self.seats2.setMap(map2!)
+                
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
         // Do any additional setup after loading the view, typically from a nib.
      
         
@@ -42,8 +70,10 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
         seats.selected_seat_limit = 3
         seats.seatSelectorDelegate = self
         //self.view.addSubview(seats)
+        let map2=rooms.first?.map
         
-        let map2:String =   "_DDDDDD_DDDDDD_DDDDDDDD_/" +
+        /*
+         let map2:String =   "_DDDDDD_DDDDDD_DDDDDDDD_/" +
             "_AAAAAA_AAAAAA_DUUUAAAA_/" +
             "________________________/" +
             "_AAAAAUUAAAUAAAAUAAAAAAA/" +
@@ -51,8 +81,10 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
             "_AAAAAAAAAAAUUUUUUUAAAAA/" +
             "_AAAAAAAAUAAAAUUUUAAAAAA/" +
         "_AAAAAUUUAUAUAUAUUUAAAAA/"
+         */
         
-        let seats2 = ZSeatSelector()
+        
+        //let seats2 = ZSeatSelector()
         seats2.frame = CGRect(x: 0, y: 250, width: self.view.frame.size.width, height: 600)
         seats2.setSeatSize(CGSize(width: 30, height: 30))
         seats2.setAvailableImage(   UIImage(named: "A")!,
@@ -60,7 +92,7 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
                                     andDisabledImage:       UIImage(named: "D")!,
                                     andSelectedImage:       UIImage(named: "S")!)
         seats2.layout_type = "Normal"
-        seats2.setMap(map2)
+        seats2.setMap(map2!) //hacer el if let aca
         seats2.seat_price           = 5.0
         seats2.selected_seat_limit  = 5
         seats2.seatSelectorDelegate = self
@@ -68,8 +100,11 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
         seats2.minimumZoomScale         = 0.05
         self.view.addSubview(seats2)
         
-        
+        self.view.bringSubview(toFront: nextButton)
+       
     }
+    
+
     
     func seatSelected(_ seat: ZSeat) {
         //print("Seat at row: \(seat.row) and column: \(seat.column)\n")

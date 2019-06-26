@@ -14,6 +14,7 @@ class SessionManager {
     static var functions = [Function]()
     static var cinemas = [Cinema]()
     static var promotions = [Promotions]()
+    static var rooms = [Room]()
     
     
 }

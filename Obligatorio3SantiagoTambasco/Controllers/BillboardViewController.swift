@@ -22,6 +22,8 @@ class BillBoardViewController: UIViewController {
     var cinema = Cinema()
     var functions = [Function]()
     var function = Function()
+    var room = Room()
+    var rooms = [Room]()
     var TIndex = 0
     var movieForSegue = Movie()
     var cinemaForSegue = Cinema()
@@ -40,6 +42,7 @@ class BillBoardViewController: UIViewController {
         db = Firestore.firestore()
         getCinemas()
         getMovies()
+        getRooms()
         getFunctions()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -138,6 +141,27 @@ class BillBoardViewController: UIViewController {
                     self.function = Function()
                 }
                 SessionManager.functions = self.functions
+            }
+        }
+    }
+    
+    func getRooms(){
+        self.db.collection("room").getDocuments { (snapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in snapshot!.documents {
+                    let docId = document.documentID
+                    let id = document.get("id") as! Int
+                    let map = document.get("map") as! String
+                    //print(id, title, duration, genre, photoUrl, director, releaseDate, ageRating)
+                    self.room.id=id
+                    self.room.map=map
+                    self.rooms.append(self.room)
+                    self.room = Room()
+                    
+                }
+                SessionManager.rooms = self.rooms
             }
         }
     }

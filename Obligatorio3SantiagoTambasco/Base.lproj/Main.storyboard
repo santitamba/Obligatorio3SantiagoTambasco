@@ -286,7 +286,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eq2-nu-sE3" customClass="PromotionCollectionViewCell" customModule="Obligatorio3SantiagoTambasco" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellPromotion" id="eq2-nu-sE3" customClass="PromotionCollectionViewCell" customModule="Obligatorio3SantiagoTambasco" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -519,7 +519,7 @@
                     <connections>
                         <outlet property="CinemaFuncTableView" destination="R4j-vz-ZbO" id="FE9-gU-fOZ"/>
                         <outlet property="cinemaImage" destination="Swe-M6-zun" id="qAU-Ag-UQr"/>
-                        <segue destination="Fzy-LC-VtC" kind="show" identifier="RoomViewSegue" id="mfQ-nh-c76"/>
+                        <segue destination="Fzy-LC-VtC" kind="show" identifier="RoomViewSegue1" id="mfQ-nh-c76"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OR7-9N-qTg" userLabel="First Responder" sceneMemberID="firstResponder"/>

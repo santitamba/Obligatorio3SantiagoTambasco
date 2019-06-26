@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Obligatorio3SantiagoTambasco/Controllers/RoomViewController.swift"
-            timestampString = "583194045.962122"
+            filePath = "Obligatorio3SantiagoTambasco/PromotionCollectionViewCell.swift"
+            timestampString = "583210817.8147399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "clickNextButton(_:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "configure()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

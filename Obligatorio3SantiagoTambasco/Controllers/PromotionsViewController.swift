@@ -58,6 +58,8 @@ class PromotionsViewController: UIViewController {
                     self.promotion.quantity=quantity
                     self.promotion.photoUrl=photoUrl
                     self.promotions.append(self.promotion)
+                    self.promotion = Promotions()
+                    self.promotionCollectionView.reloadData()
                 }
                 SessionManager.promotions = self.promotions
             }
@@ -84,6 +86,10 @@ extension PromotionsViewController: UICollectionViewDataSource, UICollectionView
             //print(movies.count)
             return promotions.count
 
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     

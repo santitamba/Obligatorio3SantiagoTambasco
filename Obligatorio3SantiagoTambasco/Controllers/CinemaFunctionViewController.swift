@@ -114,7 +114,7 @@ class CinemaFunctionViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "RoomViewSegue" {
+        if segue.identifier == "RoomViewSegue1" {
             if let destinationVC = segue.destination as? RoomViewController {
                 destinationVC.function = functionsForSegue
             }
@@ -150,7 +150,7 @@ extension CinemaFunctionViewController: UITableViewDataSource, UITableViewDelega
     //Row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         functionsForSegue = functions[indexPath.row]
-        self.performSegue(withIdentifier: "RoomViewSegue", sender: self)
+        self.performSegue(withIdentifier: "RoomViewSegue1", sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

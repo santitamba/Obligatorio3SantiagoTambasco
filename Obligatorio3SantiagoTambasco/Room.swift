@@ -11,7 +11,7 @@
 import Foundation
 class Room{
     var id : Int?
-    var seats : String?//Seat
+    var map : String?//Seat
     
     
     
