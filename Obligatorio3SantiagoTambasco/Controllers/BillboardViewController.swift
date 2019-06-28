@@ -190,6 +190,32 @@ class BillBoardViewController: UIViewController {
 }
 
 extension BillBoardViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return 1.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            return 1.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == moviesCollectionView {
+            let padding: CGFloat =  20
+            let collectionViewSize = collectionView.frame.size.width - padding
+            
+            return CGSize(width: collectionViewSize/2, height: collectionViewSize/2 + 60)
+        }
+        else{
+            let padding: CGFloat =  20
+            let collectionViewSize = collectionView.frame.size.width - padding
+            
+            return CGSize(width: collectionViewSize/3, height: collectionViewSize/3 + 60)
+        }
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == moviesCollectionView {
             //print(movies.count)
@@ -235,6 +261,11 @@ extension BillBoardViewController: UICollectionViewDataSource, UICollectionViewD
     
     
 }
+
+
+
+
+
 
 
 

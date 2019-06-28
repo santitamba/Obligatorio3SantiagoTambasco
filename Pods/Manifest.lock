@@ -107,11 +107,13 @@ PODS:
   - Protobuf (3.7.0)
 
 DEPENDENCIES:
+  - Alamofire
   - AlamofireObjectMapper (= 5.2.0)
   - Firebase/Core
   - Firebase/Database
   - Firebase/Firestore
   - Kingfisher (= 4.6.1)
+  - ObjectMapper
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -156,6 +158,6 @@ SPEC CHECKSUMS:
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
 
-PODFILE CHECKSUM: 487a36fb4a43ffd484510d6582267c2074ca4429
+PODFILE CHECKSUM: 0f0680448320c56a3109d40541f167f7d7a3ee20
 
 COCOAPODS: 1.6.1

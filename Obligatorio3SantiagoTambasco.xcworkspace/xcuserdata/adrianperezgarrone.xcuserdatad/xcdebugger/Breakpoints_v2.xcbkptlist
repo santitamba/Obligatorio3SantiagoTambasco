@@ -6,16 +6,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Obligatorio3SantiagoTambasco/PromotionCollectionViewCell.swift"
-            timestampString = "583210817.8147399"
+            filePath = "Obligatorio3SantiagoTambasco/Controllers/PromotionsViewController.swift"
+            timestampString = "583388143.2208591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "configure()"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "totalAmount()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Obligatorio3SantiagoTambasco/Controllers/PromotionsViewController.swift"
+            timestampString = "583388143.22133"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "add(item:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -182,7 +182,7 @@
 				B47B87B822AB14170094526D /* Sources */,
 				B47B87B922AB14170094526D /* Frameworks */,
 				B47B87BA22AB14170094526D /* Resources */,
-				06E55FC13B8E62E1CCCAFB24 /* [CP] Embed Pods Frameworks */,
+				735A73E54EE403FB35C279C3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -242,10 +242,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06E55FC13B8E62E1CCCAFB24 /* [CP] Embed Pods Frameworks */ = {
+		735A73E54EE403FB35C279C3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Obligatorio3SantiagoTambasco/Pods-Obligatorio3SantiagoTambasco-frameworks.sh",
@@ -262,6 +264,8 @@
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",

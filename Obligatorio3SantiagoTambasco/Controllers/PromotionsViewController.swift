@@ -9,12 +9,26 @@
 import UIKit
 import Firebase
 
+protocol UpdatePromotionDelegate {
+    func add(item: Promotions)
+    func remove(item: Promotions)
+}
+
 class PromotionsViewController: UIViewController {
     
+    @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var promotionCollectionView: UICollectionView!
     var db: Firestore!
     var promotions = [Promotions]()
     var promotion = Promotions()
+    var id : Int?
+    var name : String?
+    var price : Double?
+    var quantity : Int?
+    var photoUrl : String?
+    var subtotal : Float?
+    var totalPrice: Float = 0
+    var elements = SessionManager.promotions?.filter({$0.quantity! >= 0 })
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +46,11 @@ class PromotionsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var id : Int?
-    var name : String?
-    var price : Double?
-    var quantity : Int?
-    var photoUrl : String?
-    var subtotal : Float?
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        totalAmount()
+        
+    }
     
     func getPromotions(){
         self.db.collection("promotions").getDocuments { (snapshot, err) in
@@ -65,6 +78,22 @@ class PromotionsViewController: UIViewController {
             }
         }
         
+    }
+    
+    func totalAmount(){
+        totalPrice = subtotal!
+        var cartPromotion=SessionManager.cartPromotion
+        //var cartPromotion=SessionManager.promotions
+        if let cartPromotion = cartPromotion{
+            for elem in cartPromotion{
+                var unitPrice = Float(elem.price!)
+                totalPrice = totalPrice+(Float(elem.quantity!) * unitPrice)
+            }
+            totalPriceLabel.text = "Subtotal $" + String(totalPrice)
+        }
+        else{
+            totalPriceLabel.text = "Subtotal $" + String(totalPrice)
+        }
     }
         
         
@@ -105,10 +134,45 @@ extension PromotionsViewController: UICollectionViewDataSource, UICollectionView
             guard let cellPromotion=collectionView.dequeueReusableCell(withReuseIdentifier: "cellPromotion", for: indexPath) as? PromotionCollectionViewCell else { return UICollectionViewCell()}
             cellPromotion.promotion = promotions[indexPath.row]
             cellPromotion.promotions = promotions
+            cellPromotion.delegate = self
             cellPromotion.configure()
             
             return cellPromotion
         
+    }
+    
+}
+
+
+extension PromotionsViewController: UpdatePromotionDelegate {
+    
+    func add(item: Promotions) {
+        
+        var currentItems = SessionManager.cartPromotion ?? []
+        
+        if var current = currentItems.filter({$0.id == item.id}).first{
+            current.quantity = (current.quantity ?? 0) + 1
+            //item.quantity = (item.quantity ?? 0) + 1
+        } else {
+            let newItem = item
+            currentItems.append(newItem)
+            item.quantity = 1
+        }
+        SessionManager.cartPromotion = currentItems
+        promotionCollectionView.reloadData()
+    }
+    
+    func remove(item: Promotions) {
+        var currentItems = SessionManager.cartPromotion ?? []
+        //SessionManager.cartItems = SessionManager.cartItems?.filter {$0.productId != item.id}
+        var current = currentItems.filter({$0.id == item.id}).first
+        current?.quantity = (current?.quantity ?? 0) - 1
+        if current?.quantity==0{
+            SessionManager.cartPromotion = SessionManager.cartPromotion?.filter {$0.id != item.id}
+        }
+        //item.quantity = (item.quantity ?? 0) - 1
+        
+        promotionCollectionView.reloadData()
     }
     
 }

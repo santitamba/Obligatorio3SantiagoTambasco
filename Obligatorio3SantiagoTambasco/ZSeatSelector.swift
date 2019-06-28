@@ -19,7 +19,7 @@ class ZSeatSelector: UIScrollView, UIScrollViewDelegate {
     var seat_width:     CGFloat = 20.0
     var seat_height:    CGFloat = 20.0
     var selected_seats          = NSMutableArray()
-    var seat_price:     Float   = 10.0
+    var seat_price:     Float   = 100.0
     var available_image     = UIImage()
     var unavailable_image   = UIImage()
     var disabled_image      = UIImage()

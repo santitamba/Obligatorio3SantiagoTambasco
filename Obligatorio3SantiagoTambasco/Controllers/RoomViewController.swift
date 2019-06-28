@@ -17,7 +17,8 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
 
     var db: Firestore!
     var function = Function()
-    var subtotal : Float?
+    //var subtotal : Float?
+    var subtotal: Float = 0
     var room = Room()
     var rooms = SessionManager.rooms
     let seats2 = ZSeatSelector()
@@ -93,7 +94,7 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
                                     andSelectedImage:       UIImage(named: "S")!)
         seats2.layout_type = "Normal"
         seats2.setMap(map2!) //hacer el if let aca
-        seats2.seat_price           = 5.0
+        seats2.seat_price           = 150.0
         seats2.selected_seat_limit  = 5
         seats2.seatSelectorDelegate = self
         seats2.maximumZoomScale         = 5.0
@@ -127,11 +128,23 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func clickNextButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "PromotionViewSegue", sender: self)
+    func indexAlert(alert: UIAlertAction!){
+       return
     }
     
-
+    @IBAction func clickNextButton(_ sender: Any) {
+        if subtotal == 0{
+            var title = "Error"
+            var message = "Debes al menos seleccionar una butaca"
+            var buttonTitle = "Accept"
+            let alert = UIAlertController(title: title, message: message,preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: buttonTitle,style: .default, handler: self.indexAlert))
+            self.present(alert, animated: true)
+        }
+        else{
+            self.performSegue(withIdentifier: "PromotionViewSegue", sender: self)
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier=="PromotionViewSegue"{

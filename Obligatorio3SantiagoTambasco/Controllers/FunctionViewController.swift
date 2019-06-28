@@ -83,7 +83,7 @@ class FunctionViewController: UIViewController {
             default:
                 self.other.append(f)
             }
-            }
+        }
         self.cell.append(self.tresCruces)
         self.cell.append(self.nuevoCentro)
         self.cell.append(self.montevideo)

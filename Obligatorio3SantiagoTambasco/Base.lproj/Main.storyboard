@@ -39,30 +39,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="116" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSV-iJ-WBE">
-                                                    <rect key="frame" x="33" y="38.5" width="50" height="25.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-lQ-3o0">
-                                                    <rect key="frame" x="5" y="0.0" width="106" height="106"/>
+                                                    <rect key="frame" x="5" y="0.0" width="102" height="102"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="pA1-lQ-3o0" secondAttribute="height" multiplier="1:1" id="Vi6-et-zcw"/>
+                                                        <constraint firstAttribute="width" secondItem="pA1-lQ-3o0" secondAttribute="height" multiplier="1:1" id="cHY-Nt-ERu"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="tSV-iJ-WBE" firstAttribute="centerX" secondItem="kb5-SL-HjR" secondAttribute="centerX" id="7EV-cW-DwX"/>
-                                            <constraint firstItem="tSV-iJ-WBE" firstAttribute="centerY" secondItem="kb5-SL-HjR" secondAttribute="centerY" id="MZj-2Z-bQj"/>
-                                            <constraint firstAttribute="trailing" secondItem="pA1-lQ-3o0" secondAttribute="trailing" constant="5" id="MlQ-cA-SX4"/>
-                                            <constraint firstItem="pA1-lQ-3o0" firstAttribute="top" secondItem="kb5-SL-HjR" secondAttribute="top" id="Q1z-hP-eTL"/>
-                                            <constraint firstItem="pA1-lQ-3o0" firstAttribute="leading" secondItem="kb5-SL-HjR" secondAttribute="leading" constant="5" id="eH4-dW-ZvO"/>
+                                            <constraint firstItem="pA1-lQ-3o0" firstAttribute="leading" secondItem="kb5-SL-HjR" secondAttribute="leading" constant="5" id="Xq7-bG-t9y"/>
+                                            <constraint firstItem="pA1-lQ-3o0" firstAttribute="centerY" secondItem="kb5-SL-HjR" secondAttribute="centerY" id="ZMH-Ew-WNY"/>
+                                            <constraint firstAttribute="trailing" secondItem="pA1-lQ-3o0" secondAttribute="trailing" constant="9" id="laK-LU-bAh"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="CinemaImage" destination="pA1-lQ-3o0" id="JCn-BV-muN"/>
-                                            <outlet property="CinemaLabel" destination="tSV-iJ-WBE" id="LRD-lp-I2x"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -145,19 +136,29 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9k2-Ic-Arl">
                                 <rect key="frame" x="51" y="617" width="273" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Siguiente"/>
                                 <connections>
                                     <action selector="clickNextButton:" destination="Fzy-LC-VtC" eventType="touchUpInside" id="jlD-vs-8wi"/>
-                                    <segue destination="Wyn-l2-NmV" kind="show" identifier="PromotionViewSegue" id="TIw-6C-xkq"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="------------Pantalla------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wU-k0-TL6">
+                                <rect key="frame" x="51" y="90" width="273" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9wU-k0-TL6" firstAttribute="centerX" secondItem="fC9-eL-zze" secondAttribute="centerX" id="Cfq-Cy-Y1n"/>
+                            <constraint firstItem="9wU-k0-TL6" firstAttribute="top" secondItem="fC9-eL-zze" secondAttribute="top" constant="10" id="EtC-WY-JKv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fC9-eL-zze"/>
                     </view>
                     <connections>
                         <outlet property="nextButton" destination="9k2-Ic-Arl" id="mKn-Qh-jeN"/>
+                        <segue destination="Wyn-l2-NmV" kind="show" identifier="PromotionViewSegue" id="RUX-gX-tIZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1W2-jH-8rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,14 +264,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zT-fE-d4Y">
-                                <rect key="frame" x="89" y="582" width="205" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zT-fE-d4Y">
+                                <rect key="frame" x="89" y="607" width="205" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Continuar"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsE-r9-JZt">
-                                <rect key="frame" x="166" y="553" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsE-r9-JZt">
+                                <rect key="frame" x="89" y="553" width="205" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -321,6 +321,10 @@
                                                                 <constraint firstAttribute="width" constant="50" id="VrR-f5-mOh"/>
                                                             </constraints>
                                                             <state key="normal" title="ADD"/>
+                                                            <connections>
+                                                                <action selector="addButon:" destination="kd6-bM-g4T" eventType="touchUpInside" id="EU0-99-hjg"/>
+                                                                <action selector="addButton:" destination="eq2-nu-sE3" eventType="touchUpInside" id="Pc6-hR-PxC"/>
+                                                            </connections>
                                                         </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXG-d4-9P1">
                                                             <rect key="frame" x="275" y="0.0" width="100" height="84"/>
@@ -332,6 +336,10 @@
                                                                         <constraint firstAttribute="width" constant="20" id="wbc-OC-Dmb"/>
                                                                     </constraints>
                                                                     <state key="normal" image="icon-minus"/>
+                                                                    <connections>
+                                                                        <action selector="miniusButton:" destination="kd6-bM-g4T" eventType="touchUpInside" id="gfq-3G-nxS"/>
+                                                                        <action selector="minusButton:" destination="eq2-nu-sE3" eventType="touchUpInside" id="E5X-n8-rh9"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvf-86-35x">
                                                                     <rect key="frame" x="70" y="32" width="20" height="20"/>
@@ -340,6 +348,10 @@
                                                                         <constraint firstAttribute="height" constant="20" id="W4V-Ia-wwZ"/>
                                                                     </constraints>
                                                                     <state key="normal" image="icon-plus"/>
+                                                                    <connections>
+                                                                        <action selector="plusButton:" destination="kd6-bM-g4T" eventType="touchUpInside" id="YDk-JO-2EZ"/>
+                                                                        <action selector="plusButton:" destination="eq2-nu-sE3" eventType="touchUpInside" id="rAf-l3-QBb"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gK-fj-bL0">
                                                                     <rect key="frame" x="45" y="31" width="10.5" height="21"/>
@@ -389,8 +401,8 @@
                                             <constraint firstItem="kkD-Ri-PUK" firstAttribute="leading" secondItem="eq2-nu-sE3" secondAttribute="leading" id="prq-MY-PxR"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="addButton" destination="OMC-tb-xxo" id="qjk-82-s4X"/>
-                                            <outlet property="minusButton" destination="TPc-Ee-5Gl" id="JKm-Vl-c5H"/>
+                                            <outlet property="addButton" destination="OMC-tb-xxo" id="0CL-xX-FX7"/>
+                                            <outlet property="minusButton" destination="TPc-Ee-5Gl" id="Fx1-ed-tNK"/>
                                             <outlet property="plusButton" destination="tvf-86-35x" id="w6G-Kg-hSd"/>
                                             <outlet property="priceLabel" destination="y4L-cy-kHx" id="MLK-dk-dL3"/>
                                             <outlet property="promotionImage" destination="OLb-rq-GD2" id="Kes-tW-otf"/>
@@ -407,13 +419,22 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8SN-Ia-hlB" firstAttribute="bottom" secondItem="4zT-fE-d4Y" secondAttribute="bottom" constant="20" id="DzR-Vv-OQ9"/>
+                            <constraint firstItem="8SN-Ia-hlB" firstAttribute="trailing" secondItem="4zT-fE-d4Y" secondAttribute="trailing" constant="81" id="E4s-KF-ajd"/>
+                            <constraint firstItem="4zT-fE-d4Y" firstAttribute="centerX" secondItem="hsE-r9-JZt" secondAttribute="centerX" id="PIH-MR-i1c"/>
+                            <constraint firstItem="4zT-fE-d4Y" firstAttribute="leading" secondItem="8SN-Ia-hlB" secondAttribute="leading" constant="89" id="vkC-22-YMe"/>
+                            <constraint firstItem="4zT-fE-d4Y" firstAttribute="top" secondItem="hsE-r9-JZt" secondAttribute="bottom" constant="43" id="wWl-ZY-yoe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8SN-Ia-hlB"/>
                     </view>
                     <connections>
                         <outlet property="promotionCollectionView" destination="xXB-Ea-COY" id="Os0-0s-fwb"/>
+                        <outlet property="totalPriceLabel" destination="hsE-r9-JZt" id="m2T-Gr-Yf2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bT8-oI-ds2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kd6-bM-g4T" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2376.8000000000002" y="144.3778110944528"/>
         </scene>
@@ -532,6 +553,6 @@
         <image name="icon-plus" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mfQ-nh-c76"/>
+        <segue reference="GKl-46-eae"/>
     </inferredMetricsTieBreakers>
 </document>

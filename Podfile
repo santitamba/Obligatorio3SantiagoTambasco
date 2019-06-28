@@ -6,9 +6,9 @@ target 'Obligatorio3SantiagoTambasco' do
   use_frameworks!
 
   # Pods for Obligatorio3SantiagoTambasco
-  #pod ‘Alamofire’
-  #pod ‘ObjectMapper’
-  pod ‘AlamofireObjectMapper’, '5.2.0' 
+  pod ‘Alamofire’
+  pod ‘ObjectMapper’
+  pod ‘AlamofireObjectMapper’, '5.2.0'
   pod 'Firebase/Core'
   pod ‘Firebase/Database’
   pod 'Firebase/Firestore'
