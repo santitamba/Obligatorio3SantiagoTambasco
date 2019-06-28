@@ -12,6 +12,7 @@ import Firebase
 protocol UpdatePromotionDelegate {
     func add(item: Promotions)
     func remove(item: Promotions)
+    func totalAmount()
 }
 
 class PromotionsViewController: UIViewController {
@@ -80,21 +81,7 @@ class PromotionsViewController: UIViewController {
         
     }
     
-    func totalAmount(){
-        totalPrice = subtotal!
-        var cartPromotion=SessionManager.cartPromotion
-        //var cartPromotion=SessionManager.promotions
-        if let cartPromotion = cartPromotion{
-            for elem in cartPromotion{
-                var unitPrice = Float(elem.price!)
-                totalPrice = totalPrice+(Float(elem.quantity!) * unitPrice)
-            }
-            totalPriceLabel.text = "Subtotal $" + String(totalPrice)
-        }
-        else{
-            totalPriceLabel.text = "Subtotal $" + String(totalPrice)
-        }
-    }
+
         
         
     /*
@@ -173,6 +160,22 @@ extension PromotionsViewController: UpdatePromotionDelegate {
         //item.quantity = (item.quantity ?? 0) - 1
         
         promotionCollectionView.reloadData()
+    }
+    
+    func totalAmount(){
+        totalPrice = subtotal!
+        var cartPromotion=SessionManager.cartPromotion
+        //var cartPromotion=SessionManager.promotions
+        if let cartPromotion = cartPromotion{
+            for elem in cartPromotion{
+                var unitPrice = Float(elem.price!)
+                totalPrice = totalPrice+(Float(elem.quantity!) * unitPrice)
+            }
+            totalPriceLabel.text = "Subtotal $" + String(totalPrice)
+        }
+        else{
+            totalPriceLabel.text = "Subtotal $" + String(totalPrice)
+        }
     }
     
 }

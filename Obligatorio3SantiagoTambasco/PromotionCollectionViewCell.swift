@@ -83,6 +83,7 @@ class PromotionCollectionViewCell: UICollectionViewCell {
         //promotion.quantity=1
         delegate?.add(item: promotion)
         updateLabel(add: true)
+        delegate?.totalAmount()
     }
     @IBAction func minusButton(_ sender: Any) {
         let current = getCurrentQty()
@@ -93,12 +94,14 @@ class PromotionCollectionViewCell: UICollectionViewCell {
         }
         //promotion.quantity = (promotion.quantity ?? 0) - 1
         delegate?.remove(item: promotion)
+        delegate?.totalAmount()
     }
     
     @IBAction func plusButton(_ sender: Any) {
         //promotion.quantity = (promotion.quantity ?? 0) + 1
         delegate?.add(item: promotion)
         updateLabel(add: true)
+        delegate?.totalAmount()
     }
     
     
