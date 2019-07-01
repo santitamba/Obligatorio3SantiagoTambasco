@@ -31,6 +31,7 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
     var selected_seats = NSMutableArray()
     var asientos: [ZSeat] = []
     
+    
     override func viewWillAppear(_ animated: Bool) {
         rooms = SessionManager.rooms
         selected_seats=seats2.selected_seats
@@ -59,6 +60,16 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextButton.layer.cornerRadius = 20
+        nextButton.clipsToBounds = true
+        /*
+         nextButton.layer.borderWidth = 1
+         nextButton.layer.borderColor = UIColor.purple.cgColor
+         
+         nextButton.backgroundColor = UIColor.white
+         nextButton.tintColor = UIColor.purple
+         */
+        
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         // [END setup]

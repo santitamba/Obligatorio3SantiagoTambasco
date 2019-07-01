@@ -19,11 +19,23 @@ class DetailsViewController: UIViewController {
     var totalPrice: Float = 0
     var db: Firestore!
     var asientos = [ZSeat]()
+    var subtotal : Float?
     var final = ""
     //var mapUpdate = SessionManager.selected_seats//"_AAAAAA_AAAAAA_AAAAAAAA_/_AAAAAA_AAAAAA_AUUUAAAA_/________________________/_AAAAAUUAAAUAAAAUAAAAAAA/_UAAUUUUUUUUUUUUUUUAAAAA/_AAAAAAAAAAAUUUUUUUAAAAA/_AAAAAAAAUAAAAUUUUAAAAAA/_AAAAAUUUAUAUAUAUUUAAAUU/"
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        finshPurchaseButton.layer.cornerRadius = 20
+        finshPurchaseButton.clipsToBounds = true
+        /*
+         finshPurchaseButton.layer.borderWidth = 1
+         finshPurchaseButton.layer.borderColor = UIColor.purple.cgColor
+         
+         finshPurchaseButton.backgroundColor = UIColor.white
+         finshPurchaseButton.tintColor = UIColor.purple
+         */
         // [START setup]
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
@@ -42,7 +54,7 @@ class DetailsViewController: UIViewController {
         }
         print("este si \(final)")
         detailsViewController.reloadData()
-        
+        totalAmount()
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,21 +94,21 @@ class DetailsViewController: UIViewController {
     }
     
     func totalAmount(){
-        var detailItems = SessionManager.detailItems
+        totalPrice = subtotal!
+        var cartPromotion=SessionManager.cartPromotion
         //var cartPromotion=SessionManager.promotions
-        if let detailItems = detailItems{
-            for item in detailItems{
-                for elem in item{
-                    var unitPrice = Float(elem.price!)
-                    totalPrice = totalPrice+(Float(elem.quantity!) * unitPrice)
-                }
+        if let cartPromotion = cartPromotion{
+            for elem in cartPromotion{
+                var unitPrice = Float(elem.price!)
+                totalPrice = totalPrice+(Float(elem.quantity!) * unitPrice)
             }
-            totalLabel.text = "Subtotal $" + String(totalPrice)
+            totalLabel.text = "Total $" + String(totalPrice)
         }
         else{
-            totalLabel.text = "Subtotal $" + String(totalPrice)
+            totalLabel.text = "Total $" + String(totalPrice)
         }
     }
+    
     
     func updateMap(){
         let roomRef = db.collection("room").document("lpG3bNi5rykf78U0E27Q")

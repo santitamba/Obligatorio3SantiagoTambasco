@@ -26,6 +26,22 @@ class PromotionCollectionViewCell: UICollectionViewCell {
     var subtotal = 0
     var delegate: UpdatePromotionDelegate?
     
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        addButton.layer.cornerRadius = 20
+        addButton.clipsToBounds = true
+        
+        //addButton.layer.borderWidth = 1
+        //addButton.layer.borderColor = UIColor.purple.cgColor
+        
+        //addButton.backgroundColor = UIColor.white
+        //addButton.tintColor = UIColor.purple
+        
+        
+    }
+    
     func configure() {
         self.stepperView.isHidden = true
         self.addButton.isHidden = false

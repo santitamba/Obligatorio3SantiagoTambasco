@@ -38,6 +38,15 @@ class PromotionsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextButton.layer.cornerRadius = 20
+        nextButton.clipsToBounds = true
+        /*
+         nextButton.layer.borderWidth = 1
+         nextButton.layer.borderColor = UIColor.purple.cgColor
+         
+         nextButton.backgroundColor = UIColor.white
+         nextButton.tintColor = UIColor.purple
+         */
         // [START setup]
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
@@ -61,6 +70,10 @@ class PromotionsViewController: UIViewController {
         totalAmount()
         
     }
+    
+
+
+    
     
     func getPromotions(){
         self.db.collection("promotions").getDocuments { (snapshot, err) in
@@ -108,6 +121,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                     items.append(item)
                 }
                 controller.asientos = asientos
+                controller.subtotal = subtotal
                 SessionManager.detailItems?.append(items)
             }
 
