@@ -32,7 +32,7 @@ class FunctionCollectionViewCell: UITableViewCell {
         }
     }
     func configureEmptyCell(){
-        titleLabel.text = "No hay funciona para esta pelicula"
+        titleLabel.text = "No hay funcion para esta pelicula"
         ageRatingLabel.text = ""
         durationLabel.text = ""
         scheduleLabel.text = ""
