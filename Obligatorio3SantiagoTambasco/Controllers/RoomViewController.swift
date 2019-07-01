@@ -24,7 +24,7 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
     let seats2 = ZSeatSelector()
     var entrada = Item()
     var entradas = [Item]()
-    var preSession = [[Item]]()
+    var preSession = [Item]()
     var map2 = String()
     var asiento = ZSeat()
     var final = ""
@@ -37,7 +37,7 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
         selected_seats=seats2.selected_seats
         getSelectedSeats(seats2.selected_seats)
         seats2.seatSelected(asiento)
-        preSession=[[Item]]()
+        preSession=[Item]()
         db.collection("room").document("lpG3bNi5rykf78U0E27Q")
             .addSnapshotListener { documentSnapshot, error in
                 guard let document = documentSnapshot else {
@@ -191,8 +191,8 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
         entrada.description="Entradas"
         entrada.quantity = Int(subtotal/seats2.seat_price)
         entrada.price = seats2.seat_price * Float(entrada.quantity!) //Siempre tengo al menos una butaca
-        entradas.append(entrada)
-        preSession.append(entradas)
+        //entradas.append(entrada)
+        preSession.append(entrada)
     }
     
     override func didReceiveMemoryWarning() {

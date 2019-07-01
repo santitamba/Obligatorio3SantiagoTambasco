@@ -30,6 +30,7 @@
 		B47B87D522AB14AF0094526D /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B87D422AB14AF0094526D /* Function.swift */; };
 		B47B87D722AB14BF0094526D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B87D622AB14BF0094526D /* Movie.swift */; };
 		B47B87D922AB14DA0094526D /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47B87D822AB14DA0094526D /* Room.swift */; };
+		B499D4A122CAC467008756BF /* icons8-cinema-ticket-100.png in Resources */ = {isa = PBXBuildFile; fileRef = B499D4A022CAC466008756BF /* icons8-cinema-ticket-100.png */; };
 		B4EAF60C22B8851B0036EAF0 /* FunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAF60B22B8851B0036EAF0 /* FunctionViewController.swift */; };
 		B4F2B93422C1DBD500309116 /* CinemaFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B93322C1DBD500309116 /* CinemaFunctionViewController.swift */; };
 		B4F2B93822C1DC2400309116 /* CinemaFuncitonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B93722C1DC2400309116 /* CinemaFuncitonTableViewCell.swift */; };
@@ -62,6 +63,7 @@
 		B47B87D422AB14AF0094526D /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		B47B87D622AB14BF0094526D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		B47B87D822AB14DA0094526D /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		B499D4A022CAC466008756BF /* icons8-cinema-ticket-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-cinema-ticket-100.png"; sourceTree = "<group>"; };
 		B4EAF60B22B8851B0036EAF0 /* FunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViewController.swift; sourceTree = "<group>"; };
 		B4F2B93322C1DBD500309116 /* CinemaFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaFunctionViewController.swift; sourceTree = "<group>"; };
 		B4F2B93722C1DC2400309116 /* CinemaFuncitonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaFuncitonTableViewCell.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				B47B87C822AB14170094526D /* LaunchScreen.storyboard */,
 				B413EC6B22B1D64A00A24B81 /* GoogleService-Info.plist */,
 				B47B87CB22AB14170094526D /* Info.plist */,
+				B499D4A022CAC466008756BF /* icons8-cinema-ticket-100.png */,
 			);
 			path = Obligatorio3SantiagoTambasco;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B499D4A122CAC467008756BF /* icons8-cinema-ticket-100.png in Resources */,
 				B47B87CA22AB14170094526D /* LaunchScreen.storyboard in Resources */,
 				B47B87C722AB14170094526D /* Assets.xcassets in Resources */,
 				B47B87C522AB14170094526D /* Main.storyboard in Resources */,
@@ -473,7 +477,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 87N5UY27FA;
 				INFOPLIST_FILE = Obligatorio3SantiagoTambasco/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Santiago.Obligatorio3SantiagoTambasco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,7 +494,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 87N5UY27FA;
 				INFOPLIST_FILE = Obligatorio3SantiagoTambasco/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Santiago.Obligatorio3SantiagoTambasco;
 				PRODUCT_NAME = "$(TARGET_NAME)";

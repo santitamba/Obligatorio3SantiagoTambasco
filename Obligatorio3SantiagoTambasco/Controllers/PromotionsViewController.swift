@@ -65,10 +65,9 @@ class PromotionsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        promotionCollectionView.reloadData()
         SessionManager.detailItems=SessionManager.tickets
         totalAmount()
-        
+        promotionCollectionView.reloadData()
     }
     
 
@@ -115,14 +114,17 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             var cartPromotion=SessionManager.cartPromotion
             if let cartPromotion = cartPromotion{
                 for elem in cartPromotion{
+                    items=[]
                     item.description=elem.name
-                    item.price=Float(elem.price!)
+                    item.price=Float(elem.price!)*Float(elem.quantity!)
                     item.quantity=elem.quantity
                     items.append(item)
+                    SessionManager.detailItems?.append(item)
+                    item = Item()
                 }
                 controller.asientos = asientos
                 controller.subtotal = subtotal
-                SessionManager.detailItems?.append(items)
+                //SessionManager.detailItems?.append(items)
             }
 
         }

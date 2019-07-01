@@ -14,8 +14,8 @@ class DetailsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var detailItems = [[Item]]()
-    var item = [Item]()
+    var detailItems = [Item]()
+    var item = Item()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,9 +30,9 @@ class DetailsTableViewCell: UITableViewCell {
     
     
     func configureCell(){
-        descriptionLabel.text = item.first?.description
-        quantLabel.text = String(describing: item.first?.quantity ?? 0)
-        subtotalLabel.text = "$ " + String(describing: item.first?.price ?? 0)
+        descriptionLabel.text = item.description
+        quantLabel.text = String(describing: item.quantity ?? 0)
+        subtotalLabel.text = "$ " + String(describing: item.price ?? 0)
         
     }
     

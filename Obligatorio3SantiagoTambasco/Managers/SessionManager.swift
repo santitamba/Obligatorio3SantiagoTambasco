@@ -16,8 +16,8 @@ class SessionManager {
     static var promotions: [Promotions]?
     static var rooms = [Room]()
     static var cartPromotion: [Promotions]?
-    static var detailItems: [[Item]]?
-    static var tickets: [[Item]]?
+    static var detailItems: [Item]?
+    static var tickets: [Item]?
     static var newMap: String?
     static var selected_seats = NSMutableArray()
     
@@ -25,8 +25,8 @@ class SessionManager {
     
     static func deleteAllData(){
         self.cartPromotion = [Promotions]()
-        self.detailItems = [[Item]]()
-        self.tickets = [[Item]]()
+        self.detailItems = [Item]()
+        self.tickets = [Item]()
         self.newMap = ""
         self.rooms = [Room]()
         self.selected_seats = NSMutableArray()

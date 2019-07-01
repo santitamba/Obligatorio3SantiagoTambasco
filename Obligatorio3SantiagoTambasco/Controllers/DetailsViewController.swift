@@ -15,7 +15,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var detailsViewController: UITableView!
     
-    var detailItems = SessionManager.detailItems
+    var detailItems  = [Item]()
     var totalPrice: Float = 0
     var db: Firestore!
     var asientos = [ZSeat]()
@@ -43,7 +43,7 @@ class DetailsViewController: UIViewController {
         db = Firestore.firestore()
         //print(asientos)
         final = (SessionManager.rooms.first?.map)!
-
+        detailItems=SessionManager.detailItems!
         // Do any additional setup after loading the view.
     }
     
@@ -160,11 +160,11 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate, UIC
     //Row
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if detailItems?.count==0{
+        if detailItems.count==0{
             return 0
         }
         else{
-            return detailItems!.count
+            return detailItems.count
         }
     }
     
@@ -175,23 +175,36 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate, UIC
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellDetails = tableView.dequeueReusableCell(withIdentifier: "cellDetails", for: indexPath) as! DetailsTableViewCell
         
+        //cellDetails.detailItems=detailItems!
+        var myItem = detailItems[indexPath.row]
+        //for myItem in detailItems!{
+        cellDetails.item = myItem
+        //if myItem.quantity!>0{
+        //cellDetails.configureCell()
+        
+        //}
+        //}
+        cellDetails.configureCell()
+        return cellDetails
 
+        /*
         cellDetails.detailItems = detailItems! //Si o si tiene que tener por lo menos una butaca si no no podes avanzar por eso tiene el !
-        //var myItems = detailItems![indexPath.row]
+        //let myItems = detailItems![indexPath.row]
         
         for myItems in detailItems!{
-        cellDetails.item = myItems
-        var item = myItems.first
+        cellDetails.item = detailItems!
+        let item = myItems//myItems[indexPath.row]//
         
-        if let item = item{
+        //if let item = item{
             if item.quantity!>0{
                 cellDetails.configureCell()
             }
-        }
-            //return cellDetails
+        //}
+           // return cellDetails
         }
         
         return cellDetails
+        */
         
     }
     
