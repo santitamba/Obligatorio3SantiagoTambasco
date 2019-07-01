@@ -10,13 +10,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Obligatorio3SantiagoTambasco/Controllers/PromotionsViewController.swift"
-            timestampString = "583388379.05093"
+            timestampString = "583645813.983198"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "add(item:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Obligatorio3SantiagoTambasco/Controllers/PromotionsViewController.swift"
+            timestampString = "583645813.983278"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Obligatorio3SantiagoTambasco/Controllers/BillBoardViewController.swift"
+            timestampString = "583645813.983336"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "getRooms()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Obligatorio3SantiagoTambasco.BillBoardViewController.getRooms() -&gt; ()"
+                  moduleName = "Obligatorio3SantiagoTambasco"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrianperezgarrone/Documents/GitHub/Obligatorio3SantiagoTambasco/Obligatorio3SantiagoTambasco/Controllers/BillBoardViewController.swift"
+                  timestampString = "583645814.348242"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.QuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Obligatorio3SantiagoTambasco.BillBoardViewController.getRooms() -&gt; ()"
+                  moduleName = "Obligatorio3SantiagoTambasco"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrianperezgarrone/Documents/GitHub/Obligatorio3SantiagoTambasco/Obligatorio3SantiagoTambasco/Controllers/BillBoardViewController.swift"
+                  timestampString = "583645814.352666"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "3049">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

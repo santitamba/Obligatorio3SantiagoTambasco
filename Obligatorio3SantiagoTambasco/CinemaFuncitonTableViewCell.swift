@@ -43,6 +43,13 @@ class CinemaFuncitonTableViewCell: UITableViewCell {
         
     }
     
+    func configureEmptyCell(){
+        cinemaNameLabel.text="No hay funciones disponibles"
+        ageRatingLabel.text=""
+        durationLabel.text=""
+        scheduleLabel.text=""
+    }
+    
     
     
 

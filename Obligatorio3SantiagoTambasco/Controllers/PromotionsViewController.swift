@@ -17,6 +17,7 @@ protocol UpdatePromotionDelegate {
 
 class PromotionsViewController: UIViewController {
     
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var promotionCollectionView: UICollectionView!
     var db: Firestore!
@@ -29,7 +30,11 @@ class PromotionsViewController: UIViewController {
     var photoUrl : String?
     var subtotal : Float?
     var totalPrice: Float = 0
+    var item = Item()
+    var items = [Item]()
+    var sessionManager = SessionManager.shared
     var elements = SessionManager.promotions?.filter({$0.quantity! >= 0 })
+    var asientos = [ZSeat]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +43,9 @@ class PromotionsViewController: UIViewController {
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
+        SessionManager.cartPromotion = [Promotions]()
         getPromotions()
+        promotionCollectionView.reloadData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -49,6 +56,8 @@ class PromotionsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        promotionCollectionView.reloadData()
+        SessionManager.detailItems=SessionManager.tickets
         totalAmount()
         
     }
@@ -82,7 +91,29 @@ class PromotionsViewController: UIViewController {
     }
     
 
-        
+    @IBAction func nextButton(_ sender: Any) {
+
+        self.performSegue(withIdentifier: "DetailsViewSegue", sender: self)
+    }
+
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier=="DetailsViewSegue"{
+        if let controller = segue.destination as? DetailsViewController{
+            var cartPromotion=SessionManager.cartPromotion
+            if let cartPromotion = cartPromotion{
+                for elem in cartPromotion{
+                    item.description=elem.name
+                    item.price=Float(elem.price!)
+                    item.quantity=elem.quantity
+                    items.append(item)
+                }
+                controller.asientos = asientos
+                SessionManager.detailItems?.append(items)
+            }
+
+        }
+    }
+}
         
     /*
     // MARK: - Navigation

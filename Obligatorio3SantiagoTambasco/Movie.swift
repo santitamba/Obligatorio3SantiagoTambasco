@@ -24,6 +24,14 @@ class Movie{
             }
         }
     }
+    var bannerUrl : String? {
+        didSet{
+            guard let photoUrl = photoUrl else{
+                self.photoUrl="https://static.thenounproject.com/png/340719-200.png"
+                return
+            }
+        }
+    }
     
     
     

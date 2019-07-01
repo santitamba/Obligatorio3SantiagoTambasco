@@ -30,6 +30,11 @@ class FunctionCollectionViewCell: UITableViewCell {
         if let text: String = fun.schedule {
             scheduleLabel.text = text + " hs"
         }
-
+    }
+    func configureEmptyCell(){
+        titleLabel.text = "No hay funciona para esta pelicula"
+        ageRatingLabel.text = ""
+        durationLabel.text = ""
+        scheduleLabel.text = ""
     }
 }

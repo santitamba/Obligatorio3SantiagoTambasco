@@ -12,6 +12,9 @@
 		B400CE4222B318C400AC788C /* CinemaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B400CE4122B318C400AC788C /* CinemaCollectionViewCell.swift */; };
 		B40444B222BAC166005064C0 /* FunctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40444B122BAC166005064C0 /* FunctionCollectionViewCell.swift */; };
 		B407398B22BE9493001F0956 /* PromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B407398A22BE9493001F0956 /* PromotionCollectionViewCell.swift */; };
+		B408432922C84FC6009441F3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408432822C84FC6009441F3 /* Item.swift */; };
+		B409AEA722C5CED200C3E306 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B409AEA622C5CED200C3E306 /* DetailsViewController.swift */; };
+		B409AEA922C5CEFC00C3E306 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B409AEA822C5CEFC00C3E306 /* DetailsTableViewCell.swift */; };
 		B40FA71A22B85C3F00606010 /* BillBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FA71922B85C3F00606010 /* BillBoardViewController.swift */; };
 		B40FFAF322B0AF420063C802 /* Promotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FFAF222B0AF420063C802 /* Promotions.swift */; };
 		B40FFAF622B0B09F0063C802 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FFAF522B0B09F0063C802 /* PromotionsViewController.swift */; };
@@ -39,6 +42,9 @@
 		B400CE4122B318C400AC788C /* CinemaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaCollectionViewCell.swift; sourceTree = "<group>"; };
 		B40444B122BAC166005064C0 /* FunctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionCollectionViewCell.swift; sourceTree = "<group>"; };
 		B407398A22BE9493001F0956 /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		B408432822C84FC6009441F3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		B409AEA622C5CED200C3E306 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		B409AEA822C5CEFC00C3E306 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		B40FA71922B85C3F00606010 /* BillBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillBoardViewController.swift; sourceTree = "<group>"; };
 		B40FFAF222B0AF420063C802 /* Promotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotions.swift; sourceTree = "<group>"; };
 		B40FFAF522B0B09F0063C802 /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 				B4EAF60B22B8851B0036EAF0 /* FunctionViewController.swift */,
 				B410E1CC22BD986D0085DC33 /* RoomViewController.swift */,
 				B4F2B93322C1DBD500309116 /* CinemaFunctionViewController.swift */,
+				B409AEA622C5CED200C3E306 /* DetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,6 +119,7 @@
 				B40444B122BAC166005064C0 /* FunctionCollectionViewCell.swift */,
 				B407398A22BE9493001F0956 /* PromotionCollectionViewCell.swift */,
 				B4F2B93722C1DC2400309116 /* CinemaFuncitonTableViewCell.swift */,
+				B409AEA822C5CEFC00C3E306 /* DetailsTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 				B47B87D622AB14BF0094526D /* Movie.swift */,
 				B47B87D822AB14DA0094526D /* Room.swift */,
 				B40FFAF222B0AF420063C802 /* Promotions.swift */,
+				B408432822C84FC6009441F3 /* Item.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -247,8 +256,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Obligatorio3SantiagoTambasco/Pods-Obligatorio3SantiagoTambasco-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -264,8 +271,6 @@
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
@@ -313,8 +318,10 @@
 				B410E1CF22BD98EF0085DC33 /* ZSeatSelector.swift in Sources */,
 				B40FA71A22B85C3F00606010 /* BillBoardViewController.swift in Sources */,
 				B47B87D322AB14710094526D /* Cinema.swift in Sources */,
+				B408432922C84FC6009441F3 /* Item.swift in Sources */,
 				B40FFAF622B0B09F0063C802 /* PromotionsViewController.swift in Sources */,
 				B4F2B93422C1DBD500309116 /* CinemaFunctionViewController.swift in Sources */,
+				B409AEA922C5CEFC00C3E306 /* DetailsTableViewCell.swift in Sources */,
 				B47B87D922AB14DA0094526D /* Room.swift in Sources */,
 				B40FFAF322B0AF420063C802 /* Promotions.swift in Sources */,
 				B47B87C022AB14170094526D /* AppDelegate.swift in Sources */,
@@ -322,6 +329,7 @@
 				B400CE4222B318C400AC788C /* CinemaCollectionViewCell.swift in Sources */,
 				B410E1CD22BD986D0085DC33 /* RoomViewController.swift in Sources */,
 				B4EAF60C22B8851B0036EAF0 /* FunctionViewController.swift in Sources */,
+				B409AEA722C5CED200C3E306 /* DetailsViewController.swift in Sources */,
 				B41D870122BC96DF002A6F9F /* SessionManager.swift in Sources */,
 				B4F2B93822C1DC2400309116 /* CinemaFuncitonTableViewCell.swift in Sources */,
 				B47B87D522AB14AF0094526D /* Function.swift in Sources */,

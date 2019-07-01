@@ -268,6 +268,9 @@
                                 <rect key="frame" x="89" y="607" width="205" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Continuar"/>
+                                <connections>
+                                    <action selector="nextButton:" destination="Wyn-l2-NmV" eventType="touchUpInside" id="vea-Bk-CEK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsE-r9-JZt">
                                 <rect key="frame" x="89" y="553" width="205" height="21"/>
@@ -429,14 +432,103 @@
                         <viewLayoutGuide key="safeArea" id="8SN-Ia-hlB"/>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="4zT-fE-d4Y" id="Fna-kX-GXv"/>
                         <outlet property="promotionCollectionView" destination="xXB-Ea-COY" id="Os0-0s-fwb"/>
                         <outlet property="totalPriceLabel" destination="hsE-r9-JZt" id="m2T-Gr-Yf2"/>
+                        <segue destination="Ypb-SC-lxx" kind="show" identifier="DetailsViewSegue" id="qAA-KJ-zZ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bT8-oI-ds2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kd6-bM-g4T" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2376.8000000000002" y="144.3778110944528"/>
+            <point key="canvasLocation" x="2462" y="167"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="brt-Fe-Ol3">
+            <objects>
+                <viewController id="Ypb-SC-lxx" customClass="DetailsViewController" customModule="Obligatorio3SantiagoTambasco" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="biN-Ru-eg7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="siM-ct-leG">
+                                <rect key="frame" x="0.0" y="55" width="375" height="451"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellDetails" id="PPs-3P-XR5" customClass="DetailsTableViewCell" customModule="Obligatorio3SantiagoTambasco" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PPs-3P-XR5" id="PFd-NY-c8e">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tk-pc-DUe">
+                                                    <rect key="frame" x="62" y="8" width="101" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDT-Ue-287">
+                                                    <rect key="frame" x="284" y="9" width="76" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7e-b3-ZZV">
+                                                    <rect key="frame" x="12" y="7" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="0Tk-pc-DUe" id="nHr-iG-Zn1"/>
+                                            <outlet property="quantLabel" destination="D7e-b3-ZZV" id="YYl-m6-7Yd"/>
+                                            <outlet property="subtotalLabel" destination="RDT-Ue-287" id="tOZ-QG-utv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ypb-SC-lxx" id="lR2-D0-DP9"/>
+                                    <outlet property="delegate" destination="Ypb-SC-lxx" id="OqE-Ri-kea"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qna-jm-uas">
+                                <rect key="frame" x="166" y="563" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-Fk-HJu">
+                                <rect key="frame" x="81" y="617" width="216" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Finalizar Compra"/>
+                                <connections>
+                                    <action selector="finishPurchaseButton:" destination="Ypb-SC-lxx" eventType="touchUpInside" id="b72-o1-OZy"/>
+                                    <action selector="finshPurchaseButton:" destination="lZJ-6c-Nae" eventType="touchUpInside" id="SDt-pb-ev2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="jnb-Fy-Qoh"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailsViewController" destination="siM-ct-leG" id="Fel-b9-kDc"/>
+                        <outlet property="finshPurchaseButton" destination="nxx-Fk-HJu" id="eTN-cJ-ctg"/>
+                        <outlet property="totalLabel" destination="qna-jm-uas" id="evg-72-V6g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ws5-Ef-t1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lZJ-6c-Nae" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3400.8000000000002" y="226.23688155922042"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WPF-v4-Fg7">

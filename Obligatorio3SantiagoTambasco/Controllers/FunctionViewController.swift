@@ -19,6 +19,7 @@ class FunctionViewController: UIViewController {
     var cinemas = [Cinema]()
     var movie = Movie()
     var function = Function()
+    var funEmpty = Function()
     var functions = SessionManager.functions
     var functionMovie = [Function]()
     var sections:[String] = []
@@ -29,9 +30,10 @@ class FunctionViewController: UIViewController {
     var nuevoCentro = [Function]()
     var other = [Function]()
     var functionsForSegue = Function()
+
     
     func setImage(){
-        if let photoUrl = movie.photoUrl {
+        if let photoUrl = movie.bannerUrl {
             let url = URL(string: photoUrl)
             imageMovie.kf.setImage(with: url)
         }
@@ -84,6 +86,27 @@ class FunctionViewController: UIViewController {
                 self.other.append(f)
             }
         }
+        
+        
+        funEmpty.cineId = 0
+        funEmpty.id = 0
+        funEmpty.movieId = 0
+        funEmpty.roomId = 0
+        funEmpty.schedule = "No tenemos funcion para esta pelicula"
+        
+        if portones.isEmpty{
+            self.portones.append(funEmpty)
+        }
+        if tresCruces.isEmpty{
+            self.tresCruces.append(funEmpty)
+        }
+        if nuevoCentro.isEmpty{
+            self.nuevoCentro.append(funEmpty)
+        }
+        if montevideo.isEmpty{
+            self.montevideo.append(funEmpty)
+        }
+        
         self.cell.append(self.tresCruces)
         self.cell.append(self.nuevoCentro)
         self.cell.append(self.montevideo)
@@ -133,8 +156,17 @@ extension FunctionViewController: UITableViewDataSource, UITableViewDelegate, UI
     
     //Row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        functionsForSegue = functions[indexPath.row]
-        self.performSegue(withIdentifier: "RoomViewSegue", sender: self)
+        
+        
+        let cell = functionsTableView.cellForRow(at: indexPath) as! FunctionCollectionViewCell
+        
+        functionsForSegue = cell.fun
+        if functionsForSegue.movieId != 0 {
+            self.performSegue(withIdentifier: "RoomViewSegue", sender: self)
+        }
+        else{
+            return
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -156,7 +188,12 @@ extension FunctionViewController: UITableViewDataSource, UITableViewDelegate, UI
         cellFunction.functions=functions
         let fun = cell[indexPath.section][indexPath.row]
         cellFunction.fun = fun
-        cellFunction.configureCell()
+        if fun.cineId==0{
+            cellFunction.configureEmptyCell()
+        }
+        else{
+            cellFunction.configureCell()
+        }
         //cellFunction.delegate = self
         //cellFunction.indexPath = indexPath
         //cellFunction.purchase = purchases[indexPath.row]

@@ -20,6 +20,7 @@ class CinemaFunctionViewController: UIViewController {
     var movie = Movie()
     var movies = SessionManager.movies
     var function = Function()
+    var funEmpty = Function()
     var functions = SessionManager.functions
     var functionMovie = [Function]()
     var functionCinema = [Function]()
@@ -28,6 +29,7 @@ class CinemaFunctionViewController: UIViewController {
     var avengers = [Function]()
     var spiderman = [Function]()
     var aladin = [Function]()
+    var anabel = [Function]()
     var other = [Function]()
     var functionsForSegue = Function()
     
@@ -100,10 +102,33 @@ class CinemaFunctionViewController: UIViewController {
                 self.avengers.append(f)
             case 3:
                  self.aladin.append(f)
+            case 4:
+                self.anabel.append(f)
             default:
                 self.other.append(f)
             }
         }
+        
+        funEmpty.cineId = 0
+        funEmpty.id = 0
+        funEmpty.movieId = 0
+        funEmpty.roomId = 0
+        funEmpty.schedule = "No tenemos funcion para esta pelicula"
+        
+        if spiderman.isEmpty{
+            self.spiderman.append(funEmpty)
+        }
+        if avengers.isEmpty{
+            self.avengers.append(funEmpty)
+        }
+        if aladin.isEmpty{
+            self.aladin.append(funEmpty)
+        }
+        if anabel.isEmpty{
+            self.anabel.append(funEmpty)
+        }
+        
+        self.cell.append(self.anabel)
         self.cell.append(self.aladin)
         self.cell.append(self.spiderman)
         self.cell.append(self.avengers)
@@ -149,8 +174,17 @@ extension CinemaFunctionViewController: UITableViewDataSource, UITableViewDelega
     
     //Row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        functionsForSegue = functions[indexPath.row]
-        self.performSegue(withIdentifier: "RoomViewSegue1", sender: self)
+        
+        let cell = CinemaFuncTableView.cellForRow(at: indexPath) as! CinemaFuncitonTableViewCell
+        
+        functionsForSegue = cell.fun
+        if functionsForSegue.movieId != 0 {
+            self.performSegue(withIdentifier: "RoomViewSegue1", sender: self)
+        }
+        else{
+            return
+        }
+    
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -172,7 +206,13 @@ extension CinemaFunctionViewController: UITableViewDataSource, UITableViewDelega
         cellCinFunction.functions=functions
         let fun = cell[indexPath.section][indexPath.row]
         cellCinFunction.fun = fun
-        cellCinFunction.configureCell()
+        if fun.cineId == 0{
+            cellCinFunction.configureEmptyCell()
+        }
+        else{
+            cellCinFunction.configureCell()
+        }
+
 
         
         return cellCinFunction

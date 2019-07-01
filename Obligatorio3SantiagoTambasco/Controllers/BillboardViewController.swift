@@ -30,7 +30,8 @@ class BillBoardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        getRooms()
+        rooms=[Room]()
     }
     
     override func viewDidLoad() {
@@ -42,7 +43,6 @@ class BillBoardViewController: UIViewController {
         db = Firestore.firestore()
         getCinemas()
         getMovies()
-        getRooms()
         getFunctions()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -67,6 +67,7 @@ class BillBoardViewController: UIViewController {
                     let director = document.get("director") as! String
                     let releaseDate = document.get("releaseDate") as! String
                     let ageRating = document.get("ageRating") as! String
+                    let bannerUrl = document.get("bannerUrl") as! String
                     //print(id, title, duration, genre, photoUrl, director, releaseDate, ageRating)
                     self.movie.ageRating=ageRating
                     self.movie.id=id
@@ -75,6 +76,7 @@ class BillBoardViewController: UIViewController {
                     self.movie.genre=genre
                     self.movie.photoUrl=photoUrl
                     self.movie.director=director
+                    self.movie.bannerUrl=bannerUrl
                     self.movie.releaseDate=releaseDate
                     self.movies.append(self.movie)
                     self.movie = Movie()
