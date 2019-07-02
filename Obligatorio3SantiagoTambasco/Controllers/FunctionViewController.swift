@@ -169,6 +169,12 @@ extension FunctionViewController: UITableViewDataSource, UITableViewDelegate, UI
         return(sections.count)
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.darkGray
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+    }
+    
     
     //Row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
