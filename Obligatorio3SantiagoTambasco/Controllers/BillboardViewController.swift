@@ -106,12 +106,14 @@ class BillBoardViewController: UIViewController {
                     let address = document.get("address") as! String
                     let telephone = document.get("telephone") as! String
                     let photoUrl = document.get("photoUrl") as! String
+                    let bannerUrl = document.get("bannerUrl") as! String
                     //print(id, title, duration, genre, photoUrl, director, releaseDate, ageRating)
                     self.cinema.id=id
                     self.cinema.name=name
                     self.cinema.address=address
                     self.cinema.telephone=telephone
                     self.cinema.photoUrl=photoUrl
+                    self.cinema.bannerUrl=bannerUrl
                     self.cinemas.append(self.cinema)
                     self.cinema = Cinema()
                     self.cinemasCollectionView.reloadData()

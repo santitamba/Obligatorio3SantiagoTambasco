@@ -23,6 +23,14 @@ class Cinema{
             }
         }
     }
+    var bannerUrl : String? {
+        didSet{
+            guard let bannerUrl = bannerUrl else{
+                self.bannerUrl="https://static.thenounproject.com/png/340719-200.png"
+                return
+            }
+        }
+    }
 
     
     /**

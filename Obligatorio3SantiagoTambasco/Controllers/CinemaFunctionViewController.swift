@@ -53,8 +53,8 @@ class CinemaFunctionViewController: UIViewController {
     }
     
     func setImage(){
-        if let photoUrl = cinema.photoUrl {
-            let url = URL(string: photoUrl)
+        if let bannerUrl = cinema.bannerUrl {
+            let url = URL(string: bannerUrl)
             cinemaImage.kf.setImage(with: url)
         }
     }

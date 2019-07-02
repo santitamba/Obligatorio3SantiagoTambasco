@@ -102,6 +102,7 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
         //let map2=rooms.first?.map
         //map2=(rooms.first?.map)! //hacer el if let aca
         final=(rooms.first?.map)!
+        SessionManager.room=rooms.first!
         map2=final
         
         /*
