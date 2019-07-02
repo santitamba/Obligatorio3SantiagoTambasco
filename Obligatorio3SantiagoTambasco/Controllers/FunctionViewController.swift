@@ -54,11 +54,22 @@ class FunctionViewController: UIViewController {
         //getFunctions()
         setFunctions()
         // Do any additional setup after loading the view.
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imageMovie.isUserInteractionEnabled = true
+        imageMovie.addGestureRecognizer(tapGestureRecognizer)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        self.performSegue(withIdentifier: "movieSegue", sender: self)
+        // Your action
     }
     
     func addItemToSection(){
@@ -121,6 +132,11 @@ class FunctionViewController: UIViewController {
         if segue.identifier == "RoomViewSegue" {
             if let destinationVC = segue.destination as? RoomViewController {
                 destinationVC.function = functionsForSegue
+            }
+        }
+        else if segue.identifier == "movieSegue" {
+            if let destinationVC = segue.destination as? MovieViewController {
+                destinationVC.movie = movie
             }
         }
     }

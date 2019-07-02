@@ -68,6 +68,7 @@ class BillBoardViewController: UIViewController {
                     let releaseDate = document.get("releaseDate") as! String
                     let ageRating = document.get("ageRating") as! String
                     let bannerUrl = document.get("bannerUrl") as! String
+                    let description = document.get("description") as! String
                     //print(id, title, duration, genre, photoUrl, director, releaseDate, ageRating)
                     self.movie.ageRating=ageRating
                     self.movie.id=id
@@ -77,6 +78,7 @@ class BillBoardViewController: UIViewController {
                     self.movie.photoUrl=photoUrl
                     self.movie.director=director
                     self.movie.bannerUrl=bannerUrl
+                    self.movie.description=description
                     self.movie.releaseDate=releaseDate
                     self.movies.append(self.movie)
                     self.movie = Movie()

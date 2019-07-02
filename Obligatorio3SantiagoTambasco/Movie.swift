@@ -16,6 +16,7 @@ class Movie{
     var director : String?
     var releaseDate: String?
     var ageRating: String?
+    var description: String?
     var photoUrl : String? {
         didSet{
             guard let photoUrl = photoUrl else{
