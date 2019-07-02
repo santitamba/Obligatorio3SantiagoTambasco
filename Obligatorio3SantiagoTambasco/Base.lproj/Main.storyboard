@@ -319,8 +319,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nev-h0-eWL">
-                                <rect key="frame" x="80" y="209" width="215" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nev-h0-eWL">
+                                <rect key="frame" x="20" y="209" width="335" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -331,12 +331,12 @@
                             <constraint firstItem="I6V-uK-RP2" firstAttribute="top" secondItem="nev-h0-eWL" secondAttribute="bottom" constant="15" id="22F-zq-kwb"/>
                             <constraint firstItem="S4v-WK-gb5" firstAttribute="leading" secondItem="dU9-rw-4FM" secondAttribute="leading" constant="15" id="Dt2-iF-830"/>
                             <constraint firstItem="dU9-rw-4FM" firstAttribute="bottom" secondItem="LkU-pa-OT6" secondAttribute="bottom" constant="15" id="GDM-1K-EGb"/>
-                            <constraint firstItem="nev-h0-eWL" firstAttribute="leading" secondItem="dU9-rw-4FM" secondAttribute="leading" constant="80" id="JEL-DH-Eqf"/>
+                            <constraint firstItem="nev-h0-eWL" firstAttribute="leading" secondItem="dU9-rw-4FM" secondAttribute="leading" constant="20" id="JEL-DH-Eqf"/>
                             <constraint firstItem="pQY-2G-mTq" firstAttribute="top" secondItem="RTk-U7-3m7" secondAttribute="bottom" constant="15" id="JxV-Jy-VSr"/>
                             <constraint firstItem="dU9-rw-4FM" firstAttribute="trailing" secondItem="LkU-pa-OT6" secondAttribute="trailing" constant="15" id="KXa-SI-2Q2"/>
                             <constraint firstItem="1jr-xR-ywV" firstAttribute="leading" secondItem="dU9-rw-4FM" secondAttribute="leading" id="LVE-wc-IK2"/>
                             <constraint firstItem="dU9-rw-4FM" firstAttribute="top" secondItem="1jr-xR-ywV" secondAttribute="top" id="MRq-gF-E2k"/>
-                            <constraint firstItem="dU9-rw-4FM" firstAttribute="trailing" secondItem="nev-h0-eWL" secondAttribute="trailing" constant="80" id="NRk-7e-VLu"/>
+                            <constraint firstItem="dU9-rw-4FM" firstAttribute="trailing" secondItem="nev-h0-eWL" secondAttribute="trailing" constant="20" id="NRk-7e-VLu"/>
                             <constraint firstItem="dU9-rw-4FM" firstAttribute="trailing" secondItem="1jr-xR-ywV" secondAttribute="trailing" id="NjY-0Y-ksq"/>
                             <constraint firstItem="frY-3u-92S" firstAttribute="leading" secondItem="dU9-rw-4FM" secondAttribute="leading" constant="15" id="Ov7-n2-ekd"/>
                             <constraint firstItem="nev-h0-eWL" firstAttribute="centerX" secondItem="1jr-xR-ywV" secondAttribute="centerX" id="SAi-zt-EPG"/>
