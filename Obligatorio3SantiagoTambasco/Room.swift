@@ -12,6 +12,7 @@ import Foundation
 class Room{
     var id : Int?
     var map : String?//Seat
+    var docId : String?
     //var matrixMap: String?
     
     

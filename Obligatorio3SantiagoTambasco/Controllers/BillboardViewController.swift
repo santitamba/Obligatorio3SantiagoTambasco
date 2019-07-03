@@ -161,6 +161,7 @@ class BillBoardViewController: UIViewController {
                     let id = document.get("id") as! Int
                     let map = document.get("map") as! String
                     //print(id, title, duration, genre, photoUrl, director, releaseDate, ageRating)
+                    self.room.docId=docId
                     self.room.id=id
                     self.room.map=map
                     self.rooms.append(self.room)

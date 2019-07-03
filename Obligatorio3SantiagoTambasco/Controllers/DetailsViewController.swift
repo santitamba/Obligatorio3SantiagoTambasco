@@ -42,7 +42,7 @@ class DetailsViewController: UIViewController {
         // [END setup]
         db = Firestore.firestore()
         //print(asientos)
-        final = (SessionManager.rooms.first?.map)!
+        final = SessionManager.room.map!//(SessionManager.rooms.first?.map)!
         detailItems=SessionManager.detailItems!
         // Do any additional setup after loading the view.
     }
@@ -111,7 +111,7 @@ class DetailsViewController: UIViewController {
     
     
     func updateMap(){
-        let roomRef = db.collection("room").document("lpG3bNi5rykf78U0E27Q")
+        let roomRef = db.collection("room").document(SessionManager.room.docId!)
         
         // Set the "capital" field of the city 'DC'
         roomRef.updateData([

@@ -21,6 +21,7 @@ class SessionManager {
     static var tickets: [Item]?
     static var newMap: String?
     static var selected_seats = NSMutableArray()
+    static var docId: String?
     
 
     
@@ -29,6 +30,7 @@ class SessionManager {
         self.detailItems = [Item]()
         self.tickets = [Item]()
         self.newMap = ""
+        self.docId = ""
         self.rooms = [Room]()
         self.selected_seats = NSMutableArray()
     }

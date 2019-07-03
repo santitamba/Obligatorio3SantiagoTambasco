@@ -20,6 +20,7 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
     //var subtotal : Float?
     var subtotal: Float = 0
     var room = Room()
+    var Myroom=Room()
     var rooms = SessionManager.rooms
     let seats2 = ZSeatSelector()
     var entrada = Item()
@@ -30,15 +31,22 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
     var final = ""
     var selected_seats = NSMutableArray()
     var asientos: [ZSeat] = []
+    var docId=""
     
     
     override func viewWillAppear(_ animated: Bool) {
-        rooms = SessionManager.rooms
+        /*
+        var roomid = function.roomId
+        Myroom=rooms.filter({$0.id! == roomid}).first!
+        SessionManager.room=Myroom
+        docId = (Myroom.docId)!
+ */
+
         selected_seats=seats2.selected_seats
         getSelectedSeats(seats2.selected_seats)
         seats2.seatSelected(asiento)
         preSession=[Item]()
-        db.collection("room").document("lpG3bNi5rykf78U0E27Q")
+        db.collection("room").document(docId)
             .addSnapshotListener { documentSnapshot, error in
                 guard let document = documentSnapshot else {
                     print("Error fetching document: \(error!)")
@@ -52,14 +60,22 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
                 self.room.map=map
                 //self.room.matrixMap=matrixMap
                 self.room.id=id
-                let map2=self.room.map
-                self.seats2.setMap(map2!)
+                self.room.docId=document.documentID
+                let final=self.room.map
+                SessionManager.room=self.room
+                self.seats2.setMap(final!)
                 
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var roomid = function.roomId
+        Myroom=rooms.filter({$0.id! == roomid}).first!
+        SessionManager.room=Myroom
+        docId = (Myroom.docId)!
+        
         nextButton.layer.cornerRadius = 20
         nextButton.clipsToBounds = true
         /*
@@ -76,33 +92,10 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
         db = Firestore.firestore()
         // Do any additional setup after loading the view, typically from a nib.
      
-        /*
-        let map:String =    "AAAAA_DAAAA/" +
-            "UAAAA_DAAAA/" +
-            "UUUUU_DAAAA/" +
-            "UAAAA_AAAAA/" +
-        "AAAAA_AAAAA/";
-        
-        let seats = ZSeatSelector()
-        seats.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 150)
-        seats.setSeatSize(CGSize(width: 10, height: 10))
-        seats.setAvailableImage(UIImage(named: "A")!,
-                                andUnavailableImage:UIImage(named: "U")!,
-                                andDisabledImage:   UIImage(named: "D")!,
-                                andSelectedImage:   UIImage(named: "S")!)
-        seats.layout_type = "Normal"
-        seats.setMap(map)
-        seats.seat_price = 10.0
-        seats.selected_seat_limit = 3
-        seats.seatSelectorDelegate = self
-        */
-        //self.view.addSubview(seats)
-        
-        
-        //let map2=rooms.first?.map
-        //map2=(rooms.first?.map)! //hacer el if let aca
-        final=(rooms.first?.map)!
-        SessionManager.room=rooms.first!
+
+        //final=(rooms.first?.map)!
+        final=Myroom.map!
+        //SessionManager.room=rooms.first!
         map2=final
         
         /*

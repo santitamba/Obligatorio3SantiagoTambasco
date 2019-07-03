@@ -30,7 +30,7 @@ class FunctionViewController: UIViewController {
     var nuevoCentro = [Function]()
     var other = [Function]()
     var functionsForSegue = Function()
-
+    var rooms = SessionManager.rooms
     
     func setImage(){
         if let photoUrl = movie.bannerUrl {
@@ -132,6 +132,12 @@ class FunctionViewController: UIViewController {
         if segue.identifier == "RoomViewSegue" {
             if let destinationVC = segue.destination as? RoomViewController {
                 destinationVC.function = functionsForSegue
+                
+                var roomid = functionsForSegue.roomId
+                destinationVC.Myroom=rooms.filter({$0.id! == roomid}).first!
+                SessionManager.room=rooms.filter({$0.id! == roomid}).first!
+                destinationVC.docId = (rooms.filter({$0.id! == roomid}).first!.docId)!
+
             }
         }
         else if segue.identifier == "movieSegue" {
