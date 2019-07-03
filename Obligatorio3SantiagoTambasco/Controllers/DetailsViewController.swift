@@ -49,6 +49,7 @@ class DetailsViewController: UIViewController {
         //print(asientos)
         final = SessionManager.room.map!//(SessionManager.rooms.first?.map)!
         detailItems=SessionManager.detailItems!
+        selected=final
         // Do any additional setup after loading the view.
     }
     
@@ -61,7 +62,6 @@ class DetailsViewController: UIViewController {
         print("este si \(final)")
         detailsViewController.reloadData()
         totalAmount()
-        
         
         //Para validar que nadie compre mi asiento
         var documentId=SessionManager.room.docId!
@@ -85,6 +85,7 @@ class DetailsViewController: UIViewController {
                 for (e1, e2) in zip(originMatRoom, newMatRoom) {
                     print("\(e1) - \(e2)")
                     if e1=="S" && e2=="U"{
+                        self.asientos = [ZSeat]()
                         var title = "Error"
                         var message = "Acaban de comprar tu asiento"
                         var buttonTitle = "Aceptar"
@@ -92,12 +93,11 @@ class DetailsViewController: UIViewController {
                         alert.addAction(UIAlertAction(title: buttonTitle,style: .default, handler: self.indexAlert1))
                         self.present(alert, animated: true)
                     }
-                    else{
+                    else if  e1=="A" && e2=="U"{
                         var NewRoomMap = self.room.map
                         for asiento in self.asientos{
                             self.calculateMat(asiento: asiento, map: NewRoomMap!)
                         }
-
                     }
                 }
                 //tengo que recorrer el original y todos los que ahora son nuevos U validarlos contra mis asientos si alguno coincide mandar un cartel de aviso y volver a la de seleccionar asientos
@@ -164,7 +164,7 @@ class DetailsViewController: UIViewController {
     }
     
     func StringToMatrixSelected(value: Int){
-        var characters = Array(final)
+        var characters = Array(selected)
         characters[value] = "S"
         //print(characters.count)
         matrixToStringSelected(matrix: characters)
@@ -180,7 +180,7 @@ class DetailsViewController: UIViewController {
             mapTemp = mapTemp + elem.description
         }
         selected = mapTemp
-        //print ("acaa \(final) -----\n")
+        print ("matriz de selected \(selected) -----\n")
     }
 
     

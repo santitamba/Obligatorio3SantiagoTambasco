@@ -220,6 +220,7 @@ class RoomViewController: UIViewController,ZSeatSelectorDelegate {
                 SessionManager.detailItems = preSession
                 SessionManager.tickets = preSession
                 controller.asientos=asientos
+                asientos=[ZSeat]()
                 //SessionManager.newMap = final
             }
         }
